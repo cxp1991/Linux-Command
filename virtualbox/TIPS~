@@ -1,0 +1,8 @@
++ Install guest distribution:
+	devices -> install guest distribution -> restart the virtual box
+
++ Share file between host and virtual box:
+	https://help.ubuntu.com/community/VirtualBox/SharedFolders
+
++ Enable copy&paste between host and guest:
+	Machine -> settings -> general -> devices -> advanced -> ...

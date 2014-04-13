@@ -1,0 +1,1549 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><link media="all" href="linux-cron-tutorial_files/widget113.css" type="text/css" rel="stylesheet">
+<!-- Code for google +1 button -->
+<script async="" src="linux-cron-tutorial_files/cbgapi.loaded_0"></script><script gapi_processed="true" type="text/javascript" src="linux-cron-tutorial_files/plusone.js"></script>
+
+<!-- Force IE 8 to run in compatible mode -->
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+
+  <!-- base href="http://www.tcpdump.com/" -->
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="index, follow">
+  <meta name="keywords" content="Cron, Linux Job Scheduling, Schedule Job, Crontab, Run, Month, Dom, Users, Hour, Min, Cmd, Editor, Dow, Set, Jobs, Default, Must, Every, Access, Etccron, Deny, Command, Add, Output, Example">
+  <meta name="title" content="Linux Cron Tutorial - How-to use Crontab - Cron, Linux Job Scheduling, Schedule Job, Crontab, Run">
+  <meta name="author" content="Tom Hirt">
+  <meta name="description" content="How-to use Crontab">
+  <meta name="generator" content="JoomSEO Enhanced (http://www.tcpdump.com)">
+  <title>Linux Cron Tutorial - How-to use Crontab - Cron, Linux Job Scheduling, Schedule Job, Crontab, Run</title>
+  <link href="http://www.tcpdump.com/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link rel="stylesheet" href="linux-cron-tutorial_files/jceutilities-217.css" type="text/css">
+  <link rel="stylesheet" href="linux-cron-tutorial_files/style.css" type="text/css">
+  <link rel="stylesheet" href="linux-cron-tutorial_files/ultimate_social_bookmarking_plugin.css" type="text/css">
+  <link rel="stylesheet" href="linux-cron-tutorial_files/css-blackg.css" type="text/css">
+  <link rel="stylesheet" href="linux-cron-tutorial_files/moopopup02.css" type="text/css">
+  <link rel="stylesheet" href="linux-cron-tutorial_files/agora_latest_b.css" type="text/css">
+  <link rel="stylesheet" href="linux-cron-tutorial_files/mod_bannerslider.css" type="text/css">
+  <script type="text/javascript" src="linux-cron-tutorial_files/mediaobject.js"></script>
+  <script type="text/javascript" src="linux-cron-tutorial_files/jquery-126.js"></script>
+  <script type="text/javascript" src="linux-cron-tutorial_files/jceutilities-217.js"></script>
+  <script type="text/javascript" src="linux-cron-tutorial_files/mootools.js"></script>
+  <script type="text/javascript" src="linux-cron-tutorial_files/caption.js"></script>
+  <script type="text/javascript" src="linux-cron-tutorial_files/mod_bannerslider.js"></script>
+  <script type="text/javascript">
+	MediaObject.init({'flash':"9,0,124,0",'windowmedia':"5,1,52,701",'quicktime':"6,0,2,0",'realmedia':"7,0,0,0",'shockwave':"8,5,1,0"});jQuery(document).ready(function(){jceutilities({'popup':{'legacy':0,'resize':1,'icons':1,'overlay':1,'overlayopacity':0.8,'overlaycolor':"#000000",'fadespeed':500,'scalespeed':500,'width':640,'height':480,'hideobjects':1,'scrollpopup':1,'theme':"standard",'themecustom':"",'themepath':"plugins/system/jceutilities/themes"},'tootlip':{'classname':"tooltip",'opacity':1,'speed':150,'position':"br",'offsets':"{'x': 16, 'y': 16}"},'imgpath':"plugins/system/jceutilities/img",'pngfix':0,'wmode':0});});
+ var JOSC_postCSS=2;
+		window.addEvent('domready', function(){ var JTooltips = new Tips($$('.hasTip'), { maxTitleChars: 50, fixed: false}); });
+  </script>
+  <script type="text/javascript">
+ var _JOOMLACOMMENT_MSG_DELETE 	= "Are you sure you want to delete this comment?"; var _JOOMLACOMMENT_MSG_DELETEALL = "Are you sure you want to delete all comments?"; var _JOOMLACOMMENT_WRITECOMMENT 	= "Write comment"; var _JOOMLACOMMENT_SENDFORM 		= "Send"; var _JOOMLACOMMENT_EDITCOMMENT 	= "Edit comment"; var _JOOMLACOMMENT_EDIT 			= "Edit"; var _JOOMLACOMMENT_FORMVALIDATE 	= "Please insert at least a comment."; var _JOOMLACOMMENT_FORMVALIDATE_CAPTCHA = "Please input the anti-spam code that you can read in the image."; var _JOOMLACOMMENT_FORMVALIDATE_CAPTCHA_FAILED = "Anti-spam code is not correct. Please input the code that you can read in the image."; var _JOOMLACOMMENT_FORMVALIDATE_EMAIL = "To be notified, please enter your email"; var _JOOMLACOMMENT_ANONYMOUS 	= "Anonymous"; var _JOOMLACOMMENT_BEFORE_APPROVAL = "Your comment has been queued for moderation by site administrators and will be published after approval."; var _JOOMLACOMMENT_REQUEST_ERROR = "Request failed"; var _JOOMLACOMMENT_MSG_NEEDREFRESH = "";
+</script>
+  <script type="text/javascript" src="linux-cron-tutorial_files/client.js"></script>
+  <!-- VOTItaly Plugin v1.1 starts here -->
+<link href="linux-cron-tutorial_files/votitaly.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+
+	window.addEvent('domready', function(){
+	  var ji_vp = new VotitalyPlugin({
+	  	submiturl: 'http://www.tcpdump.com/plugins/content/ji_votitaly_ajax.php',
+			loadingimg: 'http://www.tcpdump.com/plugins/content/ji_votitaly/images/loading.gif',
+			show_stars: true,
+
+			star_description: '({num_votes} #LANG_VOTES, #LANG_AVERAGE {num_average} #LANG_OUTOF)',		
+			language: {
+				updating: 'Updating...',
+				thanks: 'Thanks for voting!',
+				already_vote: 'You have already voted for this item!',
+				votes: 'votes',
+				vote: 'vote',
+				average: 'average',
+				outof: 'out of 5',
+				error1: 'An error occured submitting yout request!',
+				error2: 'You have already voted for this item!',
+				error3: 'Rating out of range!'
+			}
+	  });
+	});
+
+</script>
+<script type="text/javascript" src="linux-cron-tutorial_files/votitalyplugin.js"></script>
+<!-- VOTItaly Plugin v1.1 ends here -->
+  <script type="text/javascript" src="linux-cron-tutorial_files/mooMessageBox.js"></script>
+  <script language="javascript" type="text/javascript">
+window.onload=function(){
+	var p = new mooSimpleBox({ width:430, height:330, btnTitle:close,closeBtn:'myBtn', btnTitle: 'close',boxClass:'myBox', id:'myID', fadeSpeed:500, opacity:'1', addContentID:'mooPopUpDiv', boxTitle:'<B>Please Help Support Us</B >', isDrag:'true'});
+	p.fadeIn();
+}
+</script>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link rel="stylesheet" href="linux-cron-tutorial_files/system.css" type="text/css">
+<link rel="stylesheet" href="linux-cron-tutorial_files/general.css" type="text/css">
+<!-- <link rel="stylesheet" href="http://www.tcpdump.com/templates/ja_zebrina/css/editor.css" type="text/css" /> -->
+<link href="linux-cron-tutorial_files/template_css.css" rel="stylesheet" type="text/css">
+<script language="javascript" type="text/javascript" src="linux-cron-tutorial_files/ja.js"></script>
+<script type="text/javascript" src="linux-cron-tutorial_files/opacity.js"></script>
+<link href="linux-cron-tutorial_files/green.css" rel="stylesheet" type="text/css">
+<!--JAJAX_BLOX:BEGIN-->
+
+			<link href="linux-cron-tutorial_files/ja.css" rel="stylesheet" type="text/css">
+			<script src="linux-cron-tutorial_files/ja_002.js" language="javascript" type="text/javascript"></script>
+			
+<!--[if lte IE 6]>
+<style type="text/css">
+.clearfix {	height: 1%;}
+</style>
+<![endif]-->
+
+<!--[if gte IE 7.0]>
+<style type="text/css">
+.clearfix {	display: inline-block;}
+</style>
+<![endif]-->
+<link rel="shortcut icon" href="http://www.tcpdump.com/images/favicon.ico" type="image/x-icon">
+
+<!-- Added by thirt for PNG transparancy fix -->
+<!--[if lte IE 6]>
+<script type="text/javascript" src="http://www.tcpdump.com/templates/ja_zebrina/scripts/supersleight-min.js"></script>
+<![endif]-->
+
+<div id="_atssh" style="visibility: hidden; height: 1px; width: 1px; position: absolute; z-index: 100000;"><iframe src="linux-cron-tutorial_files/sh114.html" style="height: 1px; width: 1px; position: absolute; z-index: 100000; border: 0px none; left: 0px; top: 0px;" title="AddThis utility frame" id="_atssh450"></iframe></div><script src="linux-cron-tutorial_files/core074.js" type="text/javascript"></script></head>
+
+<body id="bd" class="wide fs3">
+
+<!--JAJAX_BLOX:BEGIN-->
+<div id="ja-ajaxloading" style="z-index:2; display: none; width: 40px; height: 40px; background: url(http://www.tcpdump.com/templates/ja_zebrina/images/ajax-loader-green.gif) no-repeat 50%; text-align: center;">
+</div>
+<!--JAJAX_BLOX:END-->
+<a title="Skip to content" href="http://www.tcpdump.com/kb/os/linux/linux-cron-tutorial.html#Content" style="display: none;">Skip to content</a>
+<a name="Top" id="Top"></a>
+
+<div id="page">
+	<div id="page-wrapper">
+		<div id="ja-wrapper">
+
+		<!-- BEGIN: HEADER -->
+		<div id="ja-headerwrap">
+			<div id="ja-header" class="clearfix">
+				<h1>
+					<a href="http://www.tcpdump.com/index.php">
+					<img src="linux-cron-tutorial_files/logo-green.png" alt="">
+					</a>
+				</h1>
+								<div id="ja-usertoolswrap">
+		<!--			<div id="ja-usertools">-->
+		<!--						<span class="ja-usertools">
+				</span>
+		-->
+								<!--				<div id="ja-search">-->
+								<div id="login-left">			<div id="login-middle">				<div id="logged-out-form"><form action="http://www.tcpdump.com/login/login.html" method="post" id="mod_loginform" style="margin:0px;">
+&nbsp;
+<input name="username" id="mod_login_username" size="20" alt="Username or e-mail" value="Username or e-mail" onfocus="if (this.value=='Username or e-mail') this.value=''" onblur="if(this.value=='') { this.value='Username or e-mail'; return false; }" title="Username or e-mail" type="text">&nbsp;<span><input name="passwd" id="mod_login_password" size="13" alt="Password" value="paswww" onfocus="if (this.value=='paswww') this.value=''" onblur="if(this.value=='') { this.value='paswww'; return false; }" title="Password" type="password"></span>&nbsp;
+<input name="remember" id="mod_login_remember" value="yes" type="checkbox"> <span id="mod_login_remembermetext"><label for="mod_login_remember">Save</label></span>&nbsp;
+<span><input name="Submit" class="button" value="Login" type="submit"></span>&nbsp;&nbsp;
+&nbsp;&nbsp;Lost <a href="http://www.tcpdump.com/login/lost-password.html" class="mod_login">Login Information</a>? &nbsp;|&nbsp;<span id="mod_login_noaccount"> Need an account: <a href="http://www.tcpdump.com/login/register.html" class="mod_login">Register</a><span><input name="op2" value="login" type="hidden">
+<input name="lang" value="english" type="hidden">
+<input name="force_session" value="1" type="hidden">
+<input name="return" value="B:aHR0cDovL3d3dy50Y3BkdW1wLmNvbS9rYi9vcy9saW51eC9saW51eC1jcm9uLXR1dG9yaWFsLmh0bWw=" type="hidden">
+<input name="message" value="0" type="hidden">
+<input name="loginfrom" value="loginmodule" type="hidden">
+<input name="cbsecuritym3" value="cbm_224dbcda_05496531_d1ed8616cbaa716b48895a609dca0d79" type="hidden">
+<input name="j35d1ea315b239a96ddaa3b84db44fd50" value="1" type="hidden">
+</span></span>
+</form>				</div> <!-- logged-in-form-->			</div> <!-- login-middle-->		</div> <!--login-left-->		<div id="login-right">&nbsp;</div> <!-- end of login-right -->
+		<!--				</div>-->
+
+								<!--			</div>-->
+				</div>
+							</div>
+		</div>
+		<!-- END: HEADER -->
+
+		<!-- BEGIN: MAIN NAVIGATION -->
+		<div id="ja-mainnavwrap">
+			<div id="ja-mainnav" class="clearfix">
+			<ul id="ja-transmenu"><li><a href="http://www.tcpdump.com/index.html" class="mainlevel-trans" id="menu1" title="Home"><span>Home</span></a></li><li><a href="http://www.tcpdump.com/my-profile/" class="mainlevel-trans" id="menu86" title="My Profile"><span>My Profile</span></a></li><li><a href="http://www.tcpdump.com/kb/category.html" class="havechild-mainlevel-active-trans" id="menu4" title="Knowledge Base"><span>Knowledge Base</span></a></li><li><a href="http://www.tcpdump.com/downloads.html" class="mainlevel-trans" id="menu88" title="Downloads"><span>Downloads</span></a></li><li><a href="http://www.tcpdump.com/forums.html" class="mainlevel-trans" id="menu90" title="Forums"><span>Forums</span></a></li><li><a href="http://www.tcpdump.com/about/overview/tcpdump-overview.html" class="havechild-mainlevel-trans" id="menu10" title="About TCPDump"><span>About TCPDump</span></a></li></ul>
+				<script type="text/javascript" language="javascript">
+				//<!--[CDATA[
+				if (TransMenu.isSupported()) {
+					TransMenu.updateImgPath('http://www.tcpdump.com/templates/ja_zebrina/ja_menus/ja_transmenu/');
+					var ms = new TransMenuSet(TransMenu.direction.down, 0, 0, TransMenu.reference.bottomLeft);
+					TransMenu.subpad_x = 0;
+					TransMenu.subpad_y = 0;
+
+				
+					document.getElementById("menu1").onmouseover = function() {
+						ms.hideCurrent();
+					}
+					
+					document.getElementById("menu86").onmouseover = function() {
+						ms.hideCurrent();
+					}
+					var tmenu4 = ms.addMenu(document.getElementById("menu4"));
+tmenu4.addItem("Operating Systems", "/kb/os/", 0, 1);
+var tmenu16 = tmenu4.addMenu(tmenu4.items[0]);
+tmenu16.addItem("Linux", "/kb/os/linux/", 0, 1);
+tmenu16.addItem("Windows", "/kb/os/windows/", 0, 0);
+tmenu4.addItem("Messaging", "/kb/messaging/", 0, 0);
+var tmenu19 = tmenu4.addMenu(tmenu4.items[1]);
+tmenu19.addItem("Postfix", "/kb/messaging/postfix/", 0, 0);
+tmenu19.addItem("Sendmail", "/kb/messaging/sendmail/", 0, 0);
+tmenu19.addItem("Exchange Server", "/kb/messaging/exchange-server/", 0, 0);
+tmenu19.addItem("Outlook", "/kb/messaging/outlook/", 0, 0);
+tmenu4.addItem("Virtualization", "/kb/virtualization/", 0, 0);
+var tmenu24 = tmenu4.addMenu(tmenu4.items[2]);
+tmenu24.addItem("VMware ESX Server", "/kb/virtualization/vmware-esx-server/", 0, 0);
+tmenu24.addItem("Virtual Desktop", "/kb/virtualization/virtual-desktop/", 0, 0);
+tmenu24.addItem("Hyper-V", "/kb/virtualization/hyper-v/", 0, 0);
+tmenu24.addItem("XenServer", "/kb/virtualization/xenserver/", 0, 0);
+tmenu4.addItem("Networking", "/kb/networking/", 0, 0);
+var tmenu29 = tmenu4.addMenu(tmenu4.items[3]);
+tmenu29.addItem("Cisco", "/kb/networking/cisco/", 0, 0);
+tmenu29.addItem("Juniper", "/kb/networking/juniper/", 0, 0);
+tmenu4.addItem("VoIP", "/kb/voip/", 0, 0);
+var tmenu32 = tmenu4.addMenu(tmenu4.items[4]);
+tmenu32.addItem("Asterisk", "/kb/voip/asterisk/", 0, 0);
+tmenu32.addItem("Cisco VoIP", "/kb/voip/cisco-voip/", 0, 0);
+tmenu32.addItem("SIP Phones", "/kb/voip/sip-phones/", 0, 0);
+
+					document.getElementById("menu88").onmouseover = function() {
+						ms.hideCurrent();
+					}
+					
+					document.getElementById("menu90").onmouseover = function() {
+						ms.hideCurrent();
+					}
+					var tmenu10 = ms.addMenu(document.getElementById("menu10"));
+tmenu10.addItem("Overview", "/about/overview/tcpdump-overview.html", 0, 0);
+tmenu10.addItem("Advertising and Sponsoring", "/about/advertising-and-sponsorship/advertising-and-sponsorships.html", 0, 0);
+tmenu10.addItem("Contact Information", "/about/contact-information/contact-us.html", 0, 0);
+tmenu10.addItem("Site Map", "/site-map.html", 0, 0);
+tmenu10.addItem("TCPDump News", "/about/news/index.html", 0, 0);
+tmenu10.addItem("Technology News", "/about/tech-news/index.html", 0, 0);
+tmenu10.addItem("Legal", "/about/legal/website-usage-guidelines.html", 0, 0);
+var tmenu14 = tmenu10.addMenu(tmenu10.items[6]);
+tmenu14.addItem("Privacy Statement", "/about/legal/privacy-statement.html", 0, 0);
+
+					TransMenu.renderAll();
+				}
+				init1=function(){TransMenu.initialize();}
+				if (window.attachEvent) {
+					window.attachEvent("onload", init1);
+				}else{
+					TransMenu.initialize();
+				}
+				//]]-->
+				</script><div style="width: 136px; height: 119px; visibility: hidden;" id="TransMenu0" class="transMenu top"><div style="width: 134px; height: 117px; top: -119px;" class="content"><table class="items" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td colspan="2"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="0" width="1"></td></tr><tr class="item" id="active"><td style="padding:5px; padding-left:5px;" nowrap="nowrap">Operating Systems</td><td style="padding:5px; padding-right:5px;" width="10"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/arrowchild-off.gif" height="8" width="8"></td></tr><tr class="item"><td style="padding:5px; padding-left:5px;" nowrap="nowrap">Messaging</td><td style="padding:5px; padding-right:5px;" width="10"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/arrowchild-off.gif" height="8" width="8"></td></tr><tr class="item"><td style="padding:5px; padding-left:5px;" nowrap="nowrap">Virtualization</td><td style="padding:5px; padding-right:5px;" width="10"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/arrowchild-off.gif" height="8" width="8"></td></tr><tr class="item"><td style="padding:5px; padding-left:5px;" nowrap="nowrap">Networking</td><td style="padding:5px; padding-right:5px;" width="10"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/arrowchild-off.gif" height="8" width="8"></td></tr><tr class="item"><td style="padding:5px; padding-left:5px;" nowrap="nowrap">VoIP</td><td style="padding:5px; padding-right:5px;" width="10"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/arrowchild-off.gif" height="8" width="8"></td></tr><tr><td colspan="2"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="0" width="1"></td></tr></tbody></table><div style="top: 115px; width: 129px; background-color: rgb(51, 51, 51);" class="shadowBottom"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="1" width="1"></div><div style="left: 132px; height: 114px; background-color: rgb(51, 51, 51);" class="shadowRight"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="1" width="1"></div><div style="width: 132px; height: 115px; background-color: rgb(242, 154, 62);" class="background"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="1" width="1"></div></div></div><div style="width: 86px; height: 50px; visibility: hidden;" id="TransMenu1" class="transMenu"><div style="width: 84px; height: 48px; left: -86px;" class="content"><table class="items" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td colspan="2"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="0" width="1"></td></tr><tr class="item" id="active"><td style="padding:5px; padding-left:5px;" nowrap="nowrap">Linux</td><td style="padding:5px; padding-right:5px;" width="10"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="8" width="8"></td></tr><tr class="item"><td style="padding:5px; padding-left:5px;" nowrap="nowrap">Windows</td><td style="padding:5px; padding-right:5px;" width="10"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="8" width="8"></td></tr><tr><td colspan="2"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="0" width="1"></td></tr></tbody></table><div style="top: 46px; width: 79px; background-color: rgb(51, 51, 51);" class="shadowBottom"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="1" width="1"></div><div style="left: 82px; height: 45px; background-color: rgb(51, 51, 51);" class="shadowRight"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="1" width="1"></div><div style="width: 82px; height: 46px; background-color: rgb(242, 154, 62);" class="background"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="1" width="1"></div></div></div><div style="width: 127px; height: 96px; visibility: hidden;" id="TransMenu2" class="transMenu"><div style="width: 125px; height: 94px; left: -127px;" class="content"><table class="items" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td colspan="2"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="0" width="1"></td></tr><tr class="item"><td style="padding:5px; padding-left:5px;" nowrap="nowrap">Postfix</td><td style="padding:5px; padding-right:5px;" width="10"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="8" width="8"></td></tr><tr class="item"><td style="padding:5px; padding-left:5px;" nowrap="nowrap">Sendmail</td><td style="padding:5px; padding-right:5px;" width="10"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="8" width="8"></td></tr><tr class="item"><td style="padding:5px; padding-left:5px;" nowrap="nowrap">Exchange Server</td><td style="padding:5px; padding-right:5px;" width="10"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="8" width="8"></td></tr><tr class="item"><td style="padding:5px; padding-left:5px;" nowrap="nowrap">Outlook</td><td style="padding:5px; padding-right:5px;" width="10"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="8" width="8"></td></tr><tr><td colspan="2"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="0" width="1"></td></tr></tbody></table><div style="top: 92px; width: 120px; background-color: rgb(51, 51, 51);" class="shadowBottom"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="1" width="1"></div><div style="left: 123px; height: 91px; background-color: rgb(51, 51, 51);" class="shadowRight"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="1" width="1"></div><div style="width: 123px; height: 92px; background-color: rgb(242, 154, 62);" class="background"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="1" width="1"></div></div></div><div style="width: 142px; height: 96px; visibility: hidden;" id="TransMenu3" class="transMenu"><div style="width: 140px; height: 94px; left: -142px;" class="content"><table class="items" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td colspan="2"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="0" width="1"></td></tr><tr class="item"><td style="padding:5px; padding-left:5px;" nowrap="nowrap">VMware ESX Server</td><td style="padding:5px; padding-right:5px;" width="10"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="8" width="8"></td></tr><tr class="item"><td style="padding:5px; padding-left:5px;" nowrap="nowrap">Virtual Desktop</td><td style="padding:5px; padding-right:5px;" width="10"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="8" width="8"></td></tr><tr class="item"><td style="padding:5px; padding-left:5px;" nowrap="nowrap">Hyper-V</td><td style="padding:5px; padding-right:5px;" width="10"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="8" width="8"></td></tr><tr class="item"><td style="padding:5px; padding-left:5px;" nowrap="nowrap">XenServer</td><td style="padding:5px; padding-right:5px;" width="10"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="8" width="8"></td></tr><tr><td colspan="2"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="0" width="1"></td></tr></tbody></table><div style="top: 92px; width: 135px; background-color: rgb(51, 51, 51);" class="shadowBottom"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="1" width="1"></div><div style="left: 138px; height: 91px; background-color: rgb(51, 51, 51);" class="shadowRight"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="1" width="1"></div><div style="width: 138px; height: 92px; background-color: rgb(242, 154, 62);" class="background"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="1" width="1"></div></div></div><div style="width: 78px; height: 50px; visibility: hidden;" id="TransMenu4" class="transMenu"><div style="width: 76px; height: 48px; left: -78px;" class="content"><table class="items" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td colspan="2"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="0" width="1"></td></tr><tr class="item"><td style="padding:5px; padding-left:5px;" nowrap="nowrap">Cisco</td><td style="padding:5px; padding-right:5px;" width="10"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="8" width="8"></td></tr><tr class="item"><td style="padding:5px; padding-left:5px;" nowrap="nowrap">Juniper</td><td style="padding:5px; padding-right:5px;" width="10"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="8" width="8"></td></tr><tr><td colspan="2"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="0" width="1"></td></tr></tbody></table><div style="top: 46px; width: 71px; background-color: rgb(51, 51, 51);" class="shadowBottom"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="1" width="1"></div><div style="left: 74px; height: 45px; background-color: rgb(51, 51, 51);" class="shadowRight"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="1" width="1"></div><div style="width: 74px; height: 46px; background-color: rgb(242, 154, 62);" class="background"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="1" width="1"></div></div></div><div style="width: 99px; height: 73px; visibility: hidden;" id="TransMenu5" class="transMenu"><div style="width: 97px; height: 71px; left: -99px;" class="content"><table class="items" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td colspan="2"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="0" width="1"></td></tr><tr class="item"><td style="padding:5px; padding-left:5px;" nowrap="nowrap">Asterisk</td><td style="padding:5px; padding-right:5px;" width="10"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="8" width="8"></td></tr><tr class="item"><td style="padding:5px; padding-left:5px;" nowrap="nowrap">Cisco VoIP</td><td style="padding:5px; padding-right:5px;" width="10"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="8" width="8"></td></tr><tr class="item"><td style="padding:5px; padding-left:5px;" nowrap="nowrap">SIP Phones</td><td style="padding:5px; padding-right:5px;" width="10"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="8" width="8"></td></tr><tr><td colspan="2"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="0" width="1"></td></tr></tbody></table><div style="top: 69px; width: 92px; background-color: rgb(51, 51, 51);" class="shadowBottom"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="1" width="1"></div><div style="left: 95px; height: 68px; background-color: rgb(51, 51, 51);" class="shadowRight"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="1" width="1"></div><div style="width: 95px; height: 69px; background-color: rgb(242, 154, 62);" class="background"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="1" width="1"></div></div></div><div style="width: 175px; height: 165px; visibility: hidden;" id="TransMenu6" class="transMenu top"><div style="width: 173px; height: 163px; top: -165px;" class="content"><table class="items" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td colspan="2"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="0" width="1"></td></tr><tr class="item"><td style="padding:5px; padding-left:5px;" nowrap="nowrap">Overview</td><td style="padding:5px; padding-right:5px;" width="10"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="8" width="8"></td></tr><tr class="item"><td style="padding:5px; padding-left:5px;" nowrap="nowrap">Advertising and Sponsoring</td><td style="padding:5px; padding-right:5px;" width="10"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="8" width="8"></td></tr><tr class="item"><td style="padding:5px; padding-left:5px;" nowrap="nowrap">Contact Information</td><td style="padding:5px; padding-right:5px;" width="10"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="8" width="8"></td></tr><tr class="item"><td style="padding:5px; padding-left:5px;" nowrap="nowrap">Site Map</td><td style="padding:5px; padding-right:5px;" width="10"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="8" width="8"></td></tr><tr class="item"><td style="padding:5px; padding-left:5px;" nowrap="nowrap">TCPDump News</td><td style="padding:5px; padding-right:5px;" width="10"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="8" width="8"></td></tr><tr class="item"><td style="padding:5px; padding-left:5px;" nowrap="nowrap">Technology News</td><td style="padding:5px; padding-right:5px;" width="10"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="8" width="8"></td></tr><tr class="item"><td style="padding:5px; padding-left:5px;" nowrap="nowrap">Legal</td><td style="padding:5px; padding-right:5px;" width="10"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/arrowchild-off.gif" height="8" width="8"></td></tr><tr><td colspan="2"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="0" width="1"></td></tr></tbody></table><div style="top: 161px; width: 168px; background-color: rgb(51, 51, 51);" class="shadowBottom"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="1" width="1"></div><div style="left: 171px; height: 160px; background-color: rgb(51, 51, 51);" class="shadowRight"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="1" width="1"></div><div style="width: 171px; height: 161px; background-color: rgb(242, 154, 62);" class="background"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="1" width="1"></div></div></div><div style="width: 131px; height: 27px; visibility: hidden;" id="TransMenu7" class="transMenu"><div style="width: 129px; height: 25px; left: -131px;" class="content"><table class="items" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td colspan="2"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="0" width="1"></td></tr><tr class="item"><td style="padding:5px; padding-left:5px;" nowrap="nowrap">Privacy Statement</td><td style="padding:5px; padding-right:5px;" width="10"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="8" width="8"></td></tr><tr><td colspan="2"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="0" width="1"></td></tr></tbody></table><div style="top: 23px; width: 124px; background-color: rgb(51, 51, 51);" class="shadowBottom"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="1" width="1"></div><div style="left: 127px; height: 22px; background-color: rgb(51, 51, 51);" class="shadowRight"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="1" width="1"></div><div style="width: 127px; height: 23px; background-color: rgb(242, 154, 62);" class="background"><img style="opacity: 0.5;" src="linux-cron-tutorial_files/x.gif" height="1" width="1"></div></div></div>
+						</div>
+		</div>
+
+		<!--JAJAX_BLOX:BEGIN-->
+		<!--BEGIN: AJAXWRAP-->
+		<div id="ja-ajaxwrap">
+				<!--JAJAX_BLOX:END-->
+
+
+		<!-- BEGIN: BANNER AD -->
+		<div id="ja-topslwrap">
+			<div id="ja-topsl" class="clearfix">
+				<div class="ja-box" style="width: auto;">
+							<div class="moduletable">
+						<div id="mbs51886aa28808f" class="mod_bannerslider" style="width:728px;height:90px">
+		<div style="opacity: 1.1;" class="bs_opacitylayer">
+		<div style="display: block;" class="bs_contentdiv"><script type="text/javascript"><!--
+google_ad_client = "pub-1099536334989100";
+/* 728x90, created 6/5/09 */
+google_ad_slot = "7526073610";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="linux-cron-tutorial_files/show_ads.js">
+</script></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		new ContentSlider("mbs51886aa28808f", "fade", 95000, 0, 0);
+	</script>
+		</div>
+	
+				</div>
+			</div>
+		</div>
+
+
+		<!-- END: BANNER AD -->
+		
+
+		<!-- BEGIN: TOP SPOTLIGHT
+		<div id="ja-topslwrap">
+			<div id="ja-topsl" class="clearfix">
+			  			  
+			  			  
+			  			</div>
+		</div>
+
+		
+		END: TOP SPOTLIGHT -->
+
+
+
+		<!--
+		<div id="ja-shwrap" class="clearfix">
+			<div id="ja-sh">
+				&nbsp;
+			</div>
+		</div> -->
+
+
+		<!-- Search and Breadcrumb Position -->
+		<div id="search-breadcrumb-wrap">
+			<div id="search-breadcrumb-inner">
+				<div id="search-breadcrumb-left">
+											<div>
+									<div class="moduletable">
+					<span class="breadcrumbs pathway">
+<a href="http://www.tcpdump.com/" class="pathway">Home</a> <span> <img class="breadcrumb_img" src="linux-cron-tutorial_files/arrow.gif" alt="&gt;&gt;"> </span><a href="http://www.tcpdump.com/kb/category.html" class="pathway">Knowledge Base</a> <span> <img class="breadcrumb_img" src="linux-cron-tutorial_files/arrow.gif" alt="&gt;&gt;"> </span><a href="http://www.tcpdump.com/kb/os/" class="pathway">Operating Systems</a> <span> <img class="breadcrumb_img" src="linux-cron-tutorial_files/arrow.gif" alt="&gt;&gt;"> </span><a href="http://www.tcpdump.com/kb/os/linux/" class="pathway">Linux</a> <span> <img class="breadcrumb_img" src="linux-cron-tutorial_files/arrow.gif" alt="&gt;&gt;"> </span>Linux Cron Tutorial</span>
+		</div>
+	
+						</div>
+									</div> <!-- search-breadcrumb-left -->
+				<div id="search-breadcrumb-right">
+											<div>
+									<div class="moduletable_search">
+					<div id="searchform-container-wrap">
+	<div id="search-left">
+	</div> <!-- left -->
+	<div id="search-bg">
+		<div id="search-icon"> 
+		</div>
+	</div> <!-- search-bg-->
+	<div id="search-inner">
+		<form action="index.php" method="post">
+			<div class="search_search">
+				<input name="searchword" id="search-inputbox" maxlength="25" alt="Search" class="inputbox" size="25" value="search tcpdump..." onblur="if(this.value=='') this.value='search tcpdump...';" onfocus="if(this.value=='search tcpdump...') this.value='';" type="text">&nbsp;&nbsp;<input value="Search" class="button" onclick="this.form.searchword.focus();" type="submit">			</div>
+			<input name="task" value="search" type="hidden">
+			<input name="option" value="com_search" type="hidden">
+		</form>
+	</div> <!-- inner -->
+	<div id="search-right">
+	</div> <!-- right -->
+</div>		</div>
+	
+						</div>
+									</div> <!-- search-breadcrumb-right -->
+			</div> <!-- search-breadcrumb-inner -->
+		</div> <!-- search-breadcrumb-wrap -->
+
+
+		<div id="ja-containerwrap">
+			<div id="ja-container" class="clearfix">
+				<!-- BEGIN: CONTENT -->
+				<div id="ja-mainbody">
+				<a name="Content" id="Content"></a>
+				
+				<div id="ja-contentwrap">
+					<div id="ja-content">
+												<div id="ja-pathway">
+						</div>
+												<!-- Google Banner Add -->
+		                                <div id="google-menu" class="clearfix">
+                		                        
+                                		</div>
+
+
+						<table class="contentpaneopen">
+<tbody><tr>
+		<td class="contentheading" width="100%">
+					Linux Cron Tutorial			</td>
+						<td class="buttonheading" align="right" width="100%">
+		<a href="http://www.tcpdump.com/kb/os/linux/linux-cron-tutorial/pdf.html" title="PDF" onclick="window.open(this.href,'win2','status=no,toolbar=no,scrollbars=yes,titlebar=no,menubar=no,resizable=yes,width=640,height=480,directories=no,location=no'); return false;" rel="nofollow"><img src="linux-cron-tutorial_files/pdf_button.png" alt="PDF"></a>		</td>
+		
+				<td class="buttonheading" align="right" width="100%">
+		<a href="http://www.tcpdump.com/kb/os/linux/linux-cron-tutorial/print.html" title="Print" onclick="window.open(this.href,'win2','status=no,toolbar=no,scrollbars=yes,titlebar=no,menubar=no,resizable=yes,width=640,height=480,directories=no,location=no'); return false;" rel="nofollow"><img src="linux-cron-tutorial_files/printButton.png" alt="Print"></a>		</td>
+		
+				<td class="buttonheading" align="right" width="100%">
+		<a href="http://www.tcpdump.com/mailto/component.html?link=aHR0cDovL3d3dy50Y3BkdW1wLmNvbS9rYi9vcy9saW51eC9saW51eC1jcm9uLXR1dG9yaWFsLmh0bWw%3D" title="E-mail" onclick="window.open(this.href,'win2','width=400,height=350,menubar=yes,resizable=yes'); return false;"><img src="linux-cron-tutorial_files/emailButton.png" alt="E-mail"></a>		</td>
+					</tr>
+</tbody></table>
+
+<!-- Votitaly Plugin v1.1 starts here -->
+<div class="votitaly-inline-rating" id="votitaly-inline-rating-63">
+	<div class="votitaly-get-id" style="display:none;">63</div> 
+
+	<div class="votitaly-inline-rating-stars">
+	  <ul class="votitaly-star-rating">
+	    <li class="current-rating" style="width:90%;">&nbsp;</li>
+	    <li><a title="1 star out of 5" class="votitaly-toggler one-star">1</a></li>
+	    <li><a title="2 stars out of 5" class="votitaly-toggler two-stars">2</a></li>
+	    <li><a title="3 stars out of 5" class="votitaly-toggler three-stars">3</a></li>
+	    <li><a title="4 stars out of 5" class="votitaly-toggler four-stars">4</a></li>
+	    <li><a title="5 stars out of 5" class="votitaly-toggler five-stars">5</a></li>
+	  </ul>
+	</div>
+	
+	<div class="votitaly-box">
+(10 votes, average 4.50 out of 5)
+	</div>
+</div>
+<!-- Votitaly Plugin v1.1 ends here --><table class="contentpaneopen">
+<tbody><tr>
+	<td valign="top">
+		<span class="small">
+			Written by Tom Hirt		</span>
+		&nbsp;&nbsp;
+	</td>
+</tr>
+
+<tr>
+	<td class="createdate" valign="top">
+		Friday, 19 June 2009 10:44	</td>
+</tr>
+
+
+<tr>
+<td valign="top">
+<div class="ultimatesbplugin_top">  </div><p>&nbsp;</p>
+<h2>Cron How-to</h2>
+<hr>
+<p>In this KB, we will discuss the Linux job scheduler, cron. Cron is a 
+very basic and easy to use tool that allows Unix/Linux administrators a 
+facility for scheduling reoccurring jobs (if you want to schedule a one 
+off job, use '<strong><em>at</em></strong>' instead.)&nbsp; So for 
+example, if you wanted to run a particular job/script/command at a 
+certain time each Monday, you could schedule the job to run from the 
+crond.</p>
+<p>&nbsp;</p>
+<h2>Listing Jobs<br></h2>
+<hr>
+<p>By default, cron can be used by both privileged and non privileged 
+user.&nbsp; Therefore, it's important you know how to check not only 
+your crontab, but also other users crontab.</p>
+<ul>
+<li>Listing Scheduled Jobs for a User<br><br> 
+<table style="border: 1px solid #ffffff; background-color: #000000; height: 20px;" border="1" cellpadding="0" cellspacing="0" width="532">
+<tbody style="text-align: left;">
+<tr style="text-align: left;">
+<td style="text-align: left; padding: 5px;"><span style="color: #ffffff;">[root@Linux01 /]# <span style="color: #ffff00;">crontab -u example_user -l</span></span><br><span style="color: #ffffff;">no crontab for example_user</span><br><span style="color: #ffffff;">[root@Linux01 /]#</span></td>
+</tr>
+</tbody>
+</table>
+<br> </li>
+<li>List the Schedule Jobs for the current user<br><br> 
+<table style="border: 1px solid #ffffff; background-color: #000000; height: 20px;" border="1" cellpadding="0" cellspacing="0" width="532">
+<tbody style="text-align: left;">
+<tr style="text-align: left;">
+<td style="text-align: left;  padding: 5px;">
+<table border="0">
+<tbody>
+<tr>
+<td colspan="6"><span style="color: #ffffff;">[root@Linux01 /]# <span style="color: #ffff00;">crontab -l</span></span></td>
+</tr>
+<tr style="text-align: left;">
+<td style="text-align: left; width: 80px; color: #ffffff;">#MIN (0-59)</td>
+<td style="text-align: left; width: 85px; color: #ffffff;">HOUR (0-23)<br></td>
+<td style="text-align: left; width: 70px; color: #ffffff;">DoM (1-31)</td>
+<td style="text-align: left; width: 85px; color: #ffffff;">MONTH (1-12)</td>
+<td style="text-align: left; width: 70px; color: #ffffff;">DoW (0-7)</td>
+<td style="text-align: left; color: #ffffff;">CMD</td>
+</tr>
+<tr>
+<td style="color: #ffffff;">0</td>
+<td style="color: #ffffff;">1</td>
+<td style="color: #ffffff;">*</td>
+<td style="color: #ffffff;">*</td>
+<td style="color: #ffffff;">0</td>
+<td style="color: #ffffff;">quotacheck -vug /</td>
+</tr>
+<tr>
+<td style="color: #ffffff;">20</td>
+<td style="color: #ffffff;">1</td>
+<td style="color: #ffffff;">*</td>
+<td style="color: #ffffff;">*</td>
+<td style="color: #ffffff;">*</td>
+<td style="color: #ffffff;">quotacheck -vug /home</td>
+</tr>
+<tr>
+<td colspan="6"><span style="color: #ffffff;">[root@Linux01 /]#</span></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p>&nbsp;</p>
+<h2>Editing Cron</h2>
+<hr>
+<p>When editing cron, on Red Hat based distributions, the system will 
+default to the editor specified by your $EDITOR environment 
+variable.&nbsp; If the $EDITOR variable is not set, this will usually 
+default to vi.</p>
+<table style="border: 1px solid #ffffff; background-color: #000000; height: 20px;" border="1" cellpadding="0" cellspacing="0" width="400">
+<tbody style="text-align: left;">
+<tr style="text-align: left;">
+<td style="text-align: left; padding: 5px;"><span style="color: #ffffff;">[root@Linux01 /]# <span style="color: #ffff00;">set | grep EDITOR</span></span><br><span style="color: #ffffff;">[root@Linux01 /]#</span></td>
+</tr>
+</tbody>
+</table>
+<em>Note: In the above, the $EDITOR environment variable was not set so vi will be used</em>
+<p>If you wish to change the editor to pico or nano, use the following:</p>
+Nano:                                                               
+<table style="border: 1px solid #ffffff; background-color: #000000; height: 20px;" border="1" cellpadding="0" cellspacing="0" width="400">
+<tbody style="text-align: left;">
+<tr style="text-align: left;">
+<td style="text-align: left; padding: 5px;"><span style="color: #ffffff;">[root@Linux01 /]# <span style="color: #ffff00;">export EDITOR=nano</span></span><br><span style="color: #ffffff;">[root@Linux01 /]#</span></td>
+</tr>
+</tbody>
+</table>
+<em>Note: Nano must already be installed on your system</em><br><br>Pico:                                                               
+<table style="border: 1px solid #ffffff; background-color: #000000; height: 20px;" border="1" cellpadding="0" cellspacing="0" width="400">
+<tbody style="text-align: left;">
+<tr style="text-align: left;">
+<td style="text-align: left; padding: 5px;"><span style="color: #ffffff;">[root@Linux01 /]# <span style="color: #ffff00;">export EDITOR=pico</span></span><br><span style="color: #ffffff;">[root@Linux01 /]#</span></td>
+</tr>
+</tbody>
+</table>
+<em> Note:Pico must already be installed on your system</em>
+<p>On Debian based distributions (such as Ubuntu) you can set the default editor using the '<span style="color: #ffffff;"><em><strong>update-alternatives</strong></em></span>' command:</p>
+<table style="border: 1px solid #ffffff; background-color: #000000; height: 20px;" border="1" cellpadding="0" cellspacing="0" width="400">
+<tbody style="text-align: left;">
+<tr style="text-align: left;">
+<td style="text-align: left; padding: 5px;">
+<table border="0">
+<tbody>
+<tr>
+<td colspan="3"><span style="color: #ffffff;">[root@Ubuntu01 /]# <span style="color: #ffff00;">update-alternatives --config editor</span></span></td>
+</tr>
+<tr>
+<td colspan="3"><span style="color: #000000;">.</span></td>
+</tr>
+<tr>
+<td colspan="3"><span style="color: #ffffff;">There are 4 alternatives which provide `editor'.</span></td>
+</tr>
+<tr>
+<td colspan="3"><span style="color: #000000;">.</span></td>
+</tr>
+<tr style="text-align: left;">
+<td style="border-bottom: 1px dashed #ffffff; text-align: left; color: #ffffff; width: 10px;"><br></td>
+<td style="border-bottom: 1px dashed #ffffff; text-align: right; color: #ffffff; padding-left: 5px; width: 30px;">Selection</td>
+<td style="text-align: left; color: #ffffff; border-bottom: 1px dashed #ffffff; padding-left: 5px;">Alternative</td>
+</tr>
+<tr>
+<td style="color: #ffffff; text-align: right;"><br></td>
+<td style="color: #ffffff; text-align: right; padding-left: 5px;">1<br></td>
+<td style="color: #ffffff; text-align: left; padding-left: 5px;">/usr/bin/vim.tiny</td>
+</tr>
+<tr>
+<td style="color: #ffffff; text-align: right;"><br></td>
+<td style="color: #ffffff; text-align: right; padding-left: 5px;">2<br></td>
+<td style="color: #ffffff; text-align: left; padding-left: 5px;">/bin/ed</td>
+</tr>
+<tr>
+<td style="color: #ffffff; text-align: right;">*+<br></td>
+<td style="color: #ffffff; text-align: right; padding-left: 5px;">3<br></td>
+<td style="color: #ffffff; text-align: left; padding-left: 5px;">/bin/nano</td>
+</tr>
+<tr>
+<td style="color: #ffffff; text-align: right;"><br></td>
+<td style="color: #ffffff; text-align: right; padding-left: 5px;">4<br></td>
+<td style="color: #ffffff; text-align: left; padding-left: 5px;">/usr/bin/vim.basic</td>
+</tr>
+<tr>
+<td colspan="3"><span style="color: #000000;">.</span></td>
+</tr>
+<tr>
+<td colspan="3"><span style="color: #ffffff;">Press enter to keep the default[*], or type selection number:</span></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Once you have your default editor set, you are ready to edit!</p>
+Edit your crontab<br> 
+<table style="border: 1px solid #ffffff; background-color: #000000; height: 20px;" border="1" cellpadding="0" cellspacing="0" width="400">
+<tbody style="text-align: left;">
+<tr style="text-align: left;">
+<td style="text-align: left; padding: 5px;"><span style="color: #ffffff;">[root@Linux01 /]# <span style="color: #ffff00;">crontab -e</span></span><br><span style="color: #ffffff;">[root@Linux01 /]#</span></td>
+</tr>
+</tbody>
+</table>
+<br> Edit another user's crontab<br> 
+<table style="border: 1px solid #ffffff; background-color: #000000; height: 20px;" border="1" cellpadding="0" cellspacing="0" width="400">
+<tbody style="text-align: left;">
+<tr style="text-align: left;">
+<td style="text-align: left; padding: 5px;"><span style="color: #ffffff;">[root@Linux01 /]# <span style="color: #ffff00;">crontab -u example_user -e</span></span><br><span style="color: #ffffff;">[root@Linux01 /]#</span></td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>Job Scheduling</h2>
+<hr>
+<p>After issuing the edit command, you will be brought to a blank screen
+ within your editor.&nbsp; I usually add the following line to my 
+crontab tab for reference to ensure the desired schedule is set 
+correctly</p>
+<table style="border: 1px solid #ffffff; background-color: #000000; height: 20px;" border="1" cellpadding="0" cellspacing="0" width="532">
+<tbody style="text-align: left;">
+<tr style="text-align: left;">
+<td style="text-align: left;  padding: 5px;">
+<table border="0">
+<tbody>
+<tr style="text-align: left;">
+<td style="text-align: left; width: 80px; color: #ffffff;"><span style="background-color: #993366;">#</span>MIN (0-59)</td>
+<td style="text-align: left; width: 85px; color: #ffffff;">HOUR (0-23)<br></td>
+<td style="text-align: left; width: 70px; color: #ffffff;">DoM (1-31)</td>
+<td style="text-align: left; width: 85px; color: #ffffff;">MONTH (1-12)</td>
+<td style="text-align: left; width: 70px; color: #ffffff;">DoW (0-7)</td>
+<td style="text-align: left; color: #ffffff;">CMD</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<em> Note: '#' represents a  comment statement in the crontab </em>
+<p>The first 5 columns are used to define the schedule for job.&nbsp; 
+The final column is the actual job to be run.&nbsp; So if you wanted to 
+run a job at 1AM every Sunday morning, the syntax would be:</p>
+<table style="border: 1px solid #ffffff; background-color: #000000; height: 20px;" border="1" cellpadding="0" cellspacing="0" width="532">
+<tbody style="text-align: left;">
+<tr style="text-align: left;">
+<td style="text-align: left;  padding: 5px;">
+<table border="0">
+<tbody>
+<tr style="text-align: left;">
+<td style="text-align: left; width: 80px; color: #ffffff;">#MIN (0-59)</td>
+<td style="text-align: left; width: 85px; color: #ffffff;">HOUR (0-23)<br></td>
+<td style="text-align: left; width: 70px; color: #ffffff;">DoM (1-31)</td>
+<td style="text-align: left; width: 85px; color: #ffffff;">MONTH (1-12)</td>
+<td style="text-align: left; width: 70px; color: #ffffff;">DoW (0-7)</td>
+<td style="text-align: left; color: #ffffff;">CMD</td>
+</tr>
+<tr style="text-align: left;">
+<td style="text-align: left; width: 80px; color: #ffffff; background-color: #000000;">0</td>
+<td style="text-align: left; width: 85px; color: #ffffff;">1</td>
+<td style="text-align: left; width: 70px; color: #ffffff;">*</td>
+<td style="text-align: left; width: 85px; color: #ffffff;">*</td>
+<td style="text-align: left; width: 70px; color: #ffffff;">0</td>
+<td style="text-align: left; color: #ffffff;">&lt;JOB TO RUN&gt;<br></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<em> </em>
+<p>You can schedule multiple instances in the min, hour, dom etc. columns using a '<span style="color: #ffffff;"><strong>,</strong></span>' as a separator.&nbsp; For example, to run a job at 9:30PM on the 1st and 15th of each month, the syntax would be:</p>
+<table style="border: 1px solid #ffffff; background-color: #000000; height: 20px;" border="1" cellpadding="0" cellspacing="0" width="532">
+<tbody style="text-align: left;">
+<tr style="text-align: left;">
+<td style="text-align: left;  padding: 5px;">
+<table border="0">
+<tbody>
+<tr style="text-align: left;">
+<td style="text-align: left; width: 80px; color: #ffffff;">#MIN (0-59)</td>
+<td style="text-align: left; width: 85px; color: #ffffff;">HOUR (0-23)<br></td>
+<td style="text-align: left; width: 70px; color: #ffffff;">DoM (1-31)</td>
+<td style="text-align: left; width: 85px; color: #ffffff;">MONTH (1-12)</td>
+<td style="text-align: left; width: 70px; color: #ffffff;">DoW (0-7)</td>
+<td style="text-align: left; color: #ffffff;">CMD</td>
+</tr>
+<tr style="text-align: left;">
+<td style="text-align: left; width: 80px; color: #ffffff; background-color: #000000;">30</td>
+<td style="text-align: left; width: 85px; color: #ffffff;">21</td>
+<td style="text-align: left; width: 70px; color: #ffffff;">1,15</td>
+<td style="text-align: left; width: 85px; color: #ffffff;">*</td>
+<td style="text-align: left; width: 70px; color: #ffffff;">*</td>
+<td style="text-align: left; color: #ffffff;">&lt;JOB TO RUN&gt;<br></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<em> </em>
+<p>You can also schedule multiple instances with a '<span style="color: #ffffff;">/</span>' as a separator defining the reoccurring pattern length.&nbsp; For example:</p>
+<table style="border: 1px solid #ffffff; background-color: #000000; height: 20px;" border="1" cellpadding="0" cellspacing="0" width="560">
+<tbody style="text-align: left;">
+<tr style="text-align: left;">
+<td style="text-align: left; padding-top: 5px; padding-bottom: 5px;">
+<table border="0">
+<tbody>
+<tr style="text-align: left;">
+<td style="text-align: left; width: 50px; color: #ffffff; font-size: 8px;">#MIN (0-59)</td>
+<td style="text-align: left; width: 57px; color: #ffffff; font-size: 8px;">HOUR (0-23)<br></td>
+<td style="text-align: left; width: 45px; color: #ffffff; font-size: 8px;">DoM (1-31)</td>
+<td style="text-align: left; width: 60px; color: #ffffff; font-size: 8px;">MONTH (1-12)</td>
+<td style="text-align: left; width: 45px; color: #ffffff; font-size: 8px;">DoW (0-7)</td>
+<td style="text-align: left; color: #ffffff; font-size: 8px;">CMD</td>
+</tr>
+<tr>
+<td style="color: #ffffff; ">*/1<br></td>
+<td style="color: #ffffff; ">*</td>
+<td style="color: #ffffff; ">*</td>
+<td style="color: #ffffff; ">*</td>
+<td style="color: #ffffff; ">*<br></td>
+<td style="color: #ffffff; "><span style="font-size: 8pt;">/bin/echo "run every minute"</span></td>
+</tr>
+<tr>
+<td style="color: #ffffff; ">*/5<br></td>
+<td style="color: #ffffff; ">*</td>
+<td style="color: #ffffff; ">*</td>
+<td style="color: #ffffff; ">*</td>
+<td style="color: #ffffff; ">*</td>
+<td style="color: #ffffff; "><span style="font-size: 8pt;">/bin/echo "run every 5 minutes"</span></td>
+</tr>
+<tr>
+<td style="color: #ffffff; ">0<br></td>
+<td style="color: #ffffff; ">1</td>
+<td style="color: #ffffff; ">1-31/4</td>
+<td style="color: #ffffff; ">*</td>
+<td style="color: #ffffff; ">*<br></td>
+<td style="color: #ffffff; "><span style="font-size: 8pt;">/bin/echo "run @ 1AM every 4 days"</span></td>
+</tr>
+<tr>
+<td style="color: #ffffff; ">0<br></td>
+<td style="color: #ffffff; ">5</td>
+<td style="color: #ffffff; ">*</td>
+<td style="color: #ffffff; ">*</td>
+<td style="color: #ffffff; ">1-5/2<br></td>
+<td style="color: #ffffff; "><span style="font-size: 8pt;">/bin/echo "run @ 5AM every mon, wed &amp; fri"</span></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p>You can add as many entries as you like to your crontab but you must 
+ensure one command to each line.&nbsp; Saving your changes will schedule
+ the job(s) to run at their next scheduled interval.</p>
+<p>Depending on your needs, you may also choose to redirect crons output (see our <a title="Stream Redirection" href="http://www.tcpdump.com/kb/os/linux/stream-redirection/intro.html">Stream Redirection KB</a> for further details on stream redirection) to a log file or to discard the output all together.</p>
+Append output to log file for future analysis:<br> 
+<table style="border: 1px solid #ffffff; background-color: #000000; height: 20px;" border="1" cellpadding="0" cellspacing="0" width="560">
+<tbody style="text-align: left;">
+<tr style="text-align: left;">
+<td style="text-align: left; padding-top: 5px; padding-bottom: 5px;">
+<table border="0">
+<tbody>
+<tr style="text-align: left;">
+<td style="text-align: left; width: 50px; color: #ffffff; font-size: 8px;">#MIN (0-59)</td>
+<td style="text-align: left; width: 57px; color: #ffffff; font-size: 8px;">HOUR (0-23)<br></td>
+<td style="text-align: left; width: 45px; color: #ffffff; font-size: 8px;">DoM (1-31)</td>
+<td style="text-align: left; width: 60px; color: #ffffff; font-size: 8px;">MONTH (1-12)</td>
+<td style="text-align: left; width: 45px; color: #ffffff; font-size: 8px;">DoW (0-7)</td>
+<td style="text-align: left; color: #ffffff; font-size: 8px;">CMD</td>
+</tr>
+<tr>
+<td style="color: #ffffff; ">0<br></td>
+<td style="color: #ffffff; ">23</td>
+<td style="color: #ffffff; ">*</td>
+<td style="color: #ffffff; ">*</td>
+<td style="color: #ffffff; ">*<br></td>
+<td style="color: #ffffff; ">ls -al /root <span style="background-color: #993366;">&gt;&gt; /logs/cron-log.txt 2&gt;&amp;1</span></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<br> Discard all output:<br> 
+<table style="border: 1px solid #ffffff; background-color: #000000; height: 20px;" border="1" cellpadding="0" cellspacing="0" width="600">
+<tbody style="text-align: left;">
+<tr style="text-align: left;">
+<td style="text-align: left; padding-top: 5px; padding-bottom: 5px;">
+<table border="0">
+<tbody>
+<tr style="text-align: left;">
+<td style="text-align: left; width: 50px; color: #ffffff; font-size: 8px;">#MIN (0-59)</td>
+<td style="text-align: left; width: 57px; color: #ffffff; font-size: 8px;">HOUR (0-23)<br></td>
+<td style="text-align: left; width: 45px; color: #ffffff; font-size: 8px;">DoM (1-31)</td>
+<td style="text-align: left; width: 60px; color: #ffffff; font-size: 8px;">MONTH (1-12)</td>
+<td style="text-align: left; width: 45px; color: #ffffff; font-size: 8px;">DoW (0-7)</td>
+<td style="text-align: left; color: #ffffff; font-size: 8px;">CMD</td>
+</tr>
+<tr>
+<td style="color: #ffffff; ">0<br></td>
+<td style="color: #ffffff; ">*</td>
+<td style="color: #ffffff; ">*</td>
+<td style="color: #ffffff; ">*</td>
+<td style="color: #ffffff; ">*<br></td>
+<td style="color: #ffffff; ">wall "Time:" `date "+\%I:\%M \%p"` <span style="background-color: #993366;">&gt; /dev/null 2&gt;&amp;1<br></span></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>Removing A Users Crontab Entry</h2>
+<hr>
+<p>If you find a user has a crontab you do like.&nbsp; You can remove the users crontab with a single command:</p>
+<table style="border: 1px solid #ffffff; background-color: #000000; height: 20px;" border="1" cellpadding="0" cellspacing="0" width="400">
+<tbody style="text-align: left;">
+<tr style="text-align: left;">
+<td style="text-align: left; padding: 5px;"><span style="color: #ffffff;">[root@Linux01 /]# <span style="color: #ffff00;">crontab -u example_user -r</span></span><br><span style="color: #ffffff;">[root@Linux01 /]#</span></td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>Controlling Access to Cron</h2>
+<hr>
+<p>Like most other daemons, you can limit access to cron with the 
+/etc/cron.allow and /etc/cron.deny files.&nbsp; Users placed in the 
+cron.allow file will be allowed to use cron while users placed in the 
+cron.deny will be deined access.&nbsp; We can also specify all users 
+using the 'ALL' directive in either files.&nbsp; So for example:</p>
+Deny access to all users:<br> 
+<table style="border: 1px solid #ffffff; background-color: #000000; height: 20px;" border="1" cellpadding="0" cellspacing="0" width="400">
+<tbody style="text-align: left;">
+<tr style="text-align: left;">
+<td style="text-align: left; padding: 5px;"><span style="color: #ffffff;">[root@Linux01 /]# <span style="color: #ffff00;">echo "ALL" &gt;&gt; /etc/cron.deny</span></span><br><span style="color: #ffffff;">[root@Linux01 /]#</span></td>
+</tr>
+</tbody>
+</table>
+<br>Enable access to user thirt: <br> 
+<table style="border: 1px solid #ffffff; background-color: #000000; height: 20px;" border="1" cellpadding="0" cellspacing="0" width="400">
+<tbody style="text-align: left;">
+<tr style="text-align: left;">
+<td style="text-align: left; padding: 5px;"><span style="color: #ffffff;">[root@Linux01 /]# <span style="color: #ffff00;">echo "thirt" &gt;&gt; /etc/cron.allow</span></span><br><span style="color: #ffffff;">[root@Linux01 /]#</span></td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>This concludes our article on the Linux cron daemon, we hope you found this article helpful!&nbsp; Good luck job scheduling!</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<div class="ultimatesbplugin_bottom"><br>Add this page to your favorite website<br><!-- AddThis Bookmark Button BEGIN --><a href="http://www.addthis.com/bookmark.php" onclick="addthis_url = 'http://www.tcpdump.com/kb/os/linux/linux-cron-tutorial.html'; addthis_title = 'Linux Cron Tutorial'; return addthis_click(this);" target="_blank"><img src="linux-cron-tutorial_files/button1-share.gif" alt="AddThis Social Bookmark Button" height="16" border="0" width="125"></a> <script type="text/javascript">var addthis_pub = 'thirt';</script><script type="text/javascript" src="linux-cron-tutorial_files/widget.html"></script>  <!-- AddThis Bookmark Button END --> </div><!-- START of joscomment --><div id="comment">
+
+<a name="JOSC_TOP"></a>
+
+<table class="sectiontableheader" id="CommentMenu" align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tbody><tr>
+    <td class="label" align="left">Comments</td>
+	<td class="buttons" align="right">
+	  <table border="0" cellpadding="0" cellspacing="0">
+	    <tbody><tr>
+		
+		<td class="button"><a id="_JOOMLACOMMENT_ADDNEW" href="javascript:JOSC_addNew()">Add New</a></td>
+		
+		
+		
+		<td class="button"><a id="_JOOMLACOMMENT_SEARCH" href="javascript:JOSC_searchForm()">Search</a></td>
+		
+		
+	    </tr>
+	  </tbody></table>
+	</td>
+  </tr>
+</tbody></table>
+
+
+<table id="CommentPageNav" align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td>
+<div id="joscPageNav"></div>
+</td><td id="JOSC_busypage"></td></tr>
+</tbody></table>
+
+<div id="Comments">
+<table class="postcontainer" id="post447" style="margin-left:0px;" cellpadding="0" cellspacing="0" width="100%"><!-- style='padding-left:0px;'> -->
+	<tbody><tr>
+		<td><a name="josc447"></a>
+<table class="post" cellpadding="0" cellspacing="0" width="100%">
+  <tbody class="sectiontableentry1">
+    <tr>
+      <td><table class="postheader" cellpadding="0" cellspacing="0" width="100%">
+          <tbody><tr>
+            <td align="left">
+            	<span class="postusername">Asif Khan</span>
+            	&nbsp;-&nbsp;<span class="posttitle">SA</span>
+            </td>
+            <td align="right">
+				<a class="postwebsite" rel="external nofollow" href="http://none/" title="http://None" target="_blank"></a>
+				<span class="postnotify0" title="do not notify if new post"></span>
+            	
+            	|<span class="createdate">28/12/2010 18:28:30</span>
+            </td>
+          </tr>
+        </tbody></table></td>
+    </tr>
+    <tr>
+      <td colspan="2"><table class="postbody" cellpadding="0" cellspacing="0" width="100%">
+          <tbody><tr>
+            
+			<td style="overflow: hidden;">Very good Tutorial, straight to the point, better than any book i have looked at.<br>
+Thank You<br>
+Sincerely<br>
+Asif Khan</td>
+          </tr>
+        </tbody></table></td>
+    </tr>
+  
+  <tr>
+    <td><table class="postfooter" cellpadding="0" cellspacing="0" width="100%">
+        <tbody><tr>
+          <td align="left"><a href="javascript:JOSC_reply(447)">Reply</a> | <a href="javascript:JOSC_quote(447)">Quote</a></td>
+          <td align="right"></td>
+        </tr>
+      </tbody></table></td>
+  </tr>
+  
+  </tbody>
+</table>
+		</td>
+	</tr>
+</tbody></table>
+
+<table class="postcontainer" id="post468" style="margin-left:0px;" cellpadding="0" cellspacing="0" width="100%"><!-- style='padding-left:0px;'> -->
+	<tbody><tr>
+		<td><a name="josc468"></a>
+<table class="post" cellpadding="0" cellspacing="0" width="100%">
+  <tbody class="sectiontableentry2">
+    <tr>
+      <td><table class="postheader" cellpadding="0" cellspacing="0" width="100%">
+          <tbody><tr>
+            <td align="left">
+            	<span class="postusername">biswajit</span>
+            	&nbsp;-&nbsp;<span class="posttitle">password problem</span>
+            </td>
+            <td align="right">
+				
+				<span class="postnotify0" title="do not notify if new post"></span>
+            	
+            	|<span class="createdate">17/01/2011 07:18:35</span>
+            </td>
+          </tr>
+        </tbody></table></td>
+    </tr>
+    <tr>
+      <td colspan="2"><table class="postbody" cellpadding="0" cellspacing="0" width="100%">
+          <tbody><tr>
+            
+			<td style="overflow: hidden;">I have use linux redhat5.2 OS &amp; 
+openoffice3.1,i have save a document(save as type.odt)with password.but i
+ forget password,how will be open it ?PLZ help<br>
+this is very important document of my life.</td>
+          </tr>
+        </tbody></table></td>
+    </tr>
+  
+  <tr>
+    <td><table class="postfooter" cellpadding="0" cellspacing="0" width="100%">
+        <tbody><tr>
+          <td align="left"><a href="javascript:JOSC_reply(468)">Reply</a> | <a href="javascript:JOSC_quote(468)">Quote</a></td>
+          <td align="right"></td>
+        </tr>
+      </tbody></table></td>
+  </tr>
+  
+  </tbody>
+</table>
+		</td>
+	</tr>
+</tbody></table>
+
+<table class="postcontainer" id="post628" style="margin-left:0px;" cellpadding="0" cellspacing="0" width="100%"><!-- style='padding-left:0px;'> -->
+	<tbody><tr>
+		<td><a name="josc628"></a>
+<table class="post" cellpadding="0" cellspacing="0" width="100%">
+  <tbody class="sectiontableentry1">
+    <tr>
+      <td><table class="postheader" cellpadding="0" cellspacing="0" width="100%">
+          <tbody><tr>
+            <td align="left">
+            	<span class="postusername">Tanvi Agrawal</span>
+            	&nbsp;-&nbsp;<span class="posttitle">must be privileged to use -u</span>
+            </td>
+            <td align="right">
+				
+				<span class="postnotify0" title="do not notify if new post"></span>
+            	
+            	|<span class="createdate">25/04/2011 10:49:50</span>
+            </td>
+          </tr>
+        </tbody></table></td>
+    </tr>
+    <tr>
+      <td colspan="2"><table class="postbody" cellpadding="0" cellspacing="0" width="100%">
+          <tbody><tr>
+            
+			<td style="overflow: hidden;">Hello,<br>
+<br>
+I have one concern regarding the use of crontab -u  option. When I am 
+using this option from a non-root user, I am getting the following 
+message:-<br>
+Must be privileded to use -u<br>
+Please help me out with this. How can I give privilege to a non-root user such that it can use -u option with crontab.<br>
+Thanks!!</td>
+          </tr>
+        </tbody></table></td>
+    </tr>
+  
+  <tr>
+    <td><table class="postfooter" cellpadding="0" cellspacing="0" width="100%">
+        <tbody><tr>
+          <td align="left"><a href="javascript:JOSC_reply(628)">Reply</a> | <a href="javascript:JOSC_quote(628)">Quote</a></td>
+          <td align="right"></td>
+        </tr>
+      </tbody></table></td>
+  </tr>
+  
+  </tbody>
+</table>
+		</td>
+	</tr>
+</tbody></table>
+</div>
+
+<div id="JOSC_formpos">
+
+<form name="joomlacommentform" method="post" action="index.php">
+  <a name="CommentForm"></a>
+  <input name="content_id" value="63" type="hidden"><input name="component" value="" type="hidden"><input name="joscsectionid" value="1" type="hidden">
+  <table class="form" align="center" cellpadding="0" cellspacing="0">
+    <tbody><tr>
+      <td colspan="2"><div class="sectiontableheader">
+          <div id="CommentFormTitle" align="center">Write comment</div>
+        </div></td>
+    </tr>
+    <tr class="sectiontableentry1">
+      <td><div class="item">Name:</div></td>
+      <td><div class="item">
+          <input name="tname" class="inputbox" size="40" type="text">
+        </div></td>
+    </tr>
+    
+    <tr class="sectiontableentry1">
+      <td><div class="item">Email:</div></td>
+      <td><div class="item">
+          <input name="temail" class="inputbox" size="30" type="text">
+          &nbsp;
+        </div></td>
+    </tr>
+    
+    
+    <tr class="sectiontableentry1">
+      <td><div class="item">Website:</div></td>
+      <td><div class="item">
+          <input name="twebsite" class="inputbox" size="40" type="text">
+        </div></td>
+    </tr>
+    
+    <tr class="sectiontableentry1">
+      <td><div class="item">Title:</div></td>
+      <td><div class="item">
+          <input name="ttitle" class="inputbox" size="40" type="text">
+        </div></td>
+    </tr>
+    
+    <tr id="CommentToolbar" class="sectiontableentry2">
+      <td><div class="item">UBBCode:</div></td>
+      <td><div class="buttoncontainer">
+          <div style="float: left;"> <a href='javascript:JOSC_insertUBBTag("b")'><img src="linux-cron-tutorial_files/ubb_bold.gif" class="buttonBB" name="bb" alt="[b]"></a>&nbsp;<a href='javascript:JOSC_insertUBBTag("i")'><img src="linux-cron-tutorial_files/ubb_italicize.gif" class="buttonBB" name="bi" alt="[i]"></a>&nbsp;<a href='javascript:JOSC_insertUBBTag("u")'><img src="linux-cron-tutorial_files/ubb_underline.gif" class="buttonBB" name="bu" alt="[u]"></a>&nbsp;<a href='javascript:JOSC_insertUBBTag("url")'><img src="linux-cron-tutorial_files/ubb_url.gif" class="buttonBB" name="burl" alt="[url]"></a>&nbsp;<a href='javascript:JOSC_insertUBBTag("quote")'><img src="linux-cron-tutorial_files/ubb_quote.gif" class="buttonBB" name="bquote" alt="[quote]"></a>&nbsp;<a href='javascript:JOSC_insertUBBTag("code")'><img src="linux-cron-tutorial_files/ubb_code.gif" class="buttonBB" name="bcode" alt="[code]"></a>&nbsp;<a href='javascript:JOSC_insertUBBTag("img")'><img src="linux-cron-tutorial_files/ubb_image.gif" class="buttonBB" name="bimg" alt="[img]"></a>&nbsp; </div>
+          <div style="float: left;"> <select name="menuColor" class="select" onchange="JOSC_fontColor()"><option selected="selected">-color-</option><option>aqua</option><option>black</option><option>blue</option><option>fuchsia</option><option>gray</option><option>green</option><option>lime</option><option>maroon</option><option>navy</option><option>olive</option><option>purple</option><option>red</option><option>silver</option><option>teal</option><option>white</option><option>yellow</option></select>&nbsp;<select name="menuSize" class="select" onchange="JOSC_fontSize()"><option selected="selected">-size-</option><option>tiny</option><option>small</option><option>medium</option><option>large</option><option>huge</option></select> </div>
+        </div></td>
+    </tr>
+    
+    
+    <tr class="sectiontableentry1">
+      <td>&nbsp;</td>
+      <td valign="middle"><div><div class="emoticoncontainer"><div class="emoticonseparator"></div><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon(":D")'><img src="linux-cron-tutorial_files/icon_biggrin.gif" alt=":D" title=":D" border="0"></a></span></span><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon(":)")'><img src="linux-cron-tutorial_files/icon_smile.gif" alt=":)" title=":)" border="0"></a></span></span><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon(":(")'><img src="linux-cron-tutorial_files/icon_sad.gif" alt=":(" title=":(" border="0"></a></span></span><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon(":0")'><img src="linux-cron-tutorial_files/icon_surprised.gif" alt=":0" title=":0" border="0"></a></span></span><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon(":shock:")'><img src="linux-cron-tutorial_files/icon_eek.gif" alt=":shock:" title=":shock:" border="0"></a></span></span><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon(":confused:")'><img src="linux-cron-tutorial_files/icon_confused.gif" alt=":confused:" title=":confused:" border="0"></a></span></span><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon("8)")'><img src="linux-cron-tutorial_files/icon_cool.gif" alt="8)" title="8)" border="0"></a></span></span><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon(":lol:")'><img src="linux-cron-tutorial_files/icon_lol.gif" alt=":lol:" title=":lol:" border="0"></a></span></span><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon(":x")'><img src="linux-cron-tutorial_files/icon_mad.gif" alt=":x" title=":x" border="0"></a></span></span><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon(":P")'><img src="linux-cron-tutorial_files/icon_razz.gif" alt=":P" title=":P" border="0"></a></span></span><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon(":oops:")'><img src="linux-cron-tutorial_files/icon_redface.gif" alt=":oops:" title=":oops:" border="0"></a></span></span><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon(":cry:")'><img src="linux-cron-tutorial_files/icon_cry.gif" alt=":cry:" title=":cry:" border="0"></a></span></span><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon(":evil:")'><img src="linux-cron-tutorial_files/icon_evil.gif" alt=":evil:" title=":evil:" border="0"></a></span></span><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon(":twisted:")'><img src="linux-cron-tutorial_files/icon_twisted.gif" alt=":twisted:" title=":twisted:" border="0"></a></span></span><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon(":roll:")'><img src="linux-cron-tutorial_files/icon_rolleyes.gif" alt=":roll:" title=":roll:" border="0"></a></span></span><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon(":wink:")'><img src="linux-cron-tutorial_files/icon_wink.gif" alt=":wink:" title=":wink:" border="0"></a></span></span><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon(":!:")'><img src="linux-cron-tutorial_files/icon_exclaim.gif" alt=":!:" title=":!:" border="0"></a></span></span><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon(":?:")'><img src="linux-cron-tutorial_files/icon_question.gif" alt=":?:" title=":?:" border="0"></a></span></span><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon(":idea:")'><img src="linux-cron-tutorial_files/icon_idea.gif" alt=":idea:" title=":idea:" border="0"></a></span></span><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon(":arrow:")'><img src="linux-cron-tutorial_files/icon_arrow.gif" alt=":arrow:" title=":arrow:" border="0"></a></span></span><div class="emoticonseparator"></div></div></div></td>
+    </tr>
+    
+    <tr class="sectiontableentry1">
+      <td>&nbsp;</td>
+      <td><div class="item">
+          <textarea name="tcomment" class="textarea" cols="80" rows="10"></textarea>
+        </div></td>
+    </tr>
+    <tr>
+      <td class="sectiontableentry2">
+	  <table class="buttoncontainer" cellpadding="0" cellspacing="0">
+        <tbody><tr>
+          <td><input class="button" name="bsend" value="Send" onclick="JOSC_editPost(-1,-1)" type="button"></td>
+          <td id="JOSC_busy"></td>
+        </tr>
+      </tbody></table>
+      </td>
+      <td class="sectiontableentry2">
+      
+		<table class="captchacontainer" cellpadding="0" cellspacing="0">
+        <tbody><tr>
+          <td><input name="security_try" id="security_try" size="15" maxlength="10" class="captchainput" type="text"></td>
+          <td><div id="captcha"><a title="clic to reload a new image" href="javascript:JOSC_reloadCaptcha()"><img src="linux-cron-tutorial_files/captcha.html" alt="Security Image">
+<input name="security_refid" value="154a761b1024cf6b55bdf82a850b36ca" type="hidden"></a></div></td>
+        </tr>
+      	</tbody></table>
+      
+      </td>
+    </tr>
+    
+    <tr class="sectiontableentry2">
+      <td><div class="item">
+        </div></td>
+      <td><div class="itemsmall">Please input the anti-spam code that you can read in the image.</div></td>
+    </tr>
+    
+  </tbody></table>
+</form>
+
+</div>
+
+
+<h4 style="display:none;">!joomlacomment 4.0 Copyright (C) 2009 Compojoom.com . All rights reserved."</h4></div>
+<script type="text/javascript">
+var JOSC_ajaxEnabled=1;if (!JOSC_http) JOSC_ajaxEnabled=false;var JOSC_sortDownward='0';var JOSC_captchaEnabled=true;var JOSC_template='http://www.tcpdump.com/media/myjosctemplates/mydefault-emotop';var JOSC_liveSite='http://www.tcpdump.com/components/com_comment/joscomment';var JOSC_ConfigLiveSite='http://www.tcpdump.com/';var JOSC_linkToContent='http://www.tcpdump.com/kb/os/linux/linux-cron-tutorial.html';var JOSC_autopublish='1';
+</script>
+<!-- END of joscomment --><!-- Google +1 button -->
+<div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: none repeat scroll 0% 0% transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px;"><iframe title="+1" data-gapiattached="true" allowtransparency="true" src="linux-cron-tutorial_files/fastbutton.html" name="I0_1367894769394" id="I0_1367894769394" vspace="0" tabindex="0" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" marginwidth="0" marginheight="0" hspace="0" frameborder="0" scrolling="no" width="100%"></iframe></div>
+</td>
+</tr>
+
+<tr>
+	<td class="modifydate">
+		Last Updated on Friday, 19 June 2009 15:29	</td>
+</tr>
+</tbody></table>
+<span class="article_separator">&nbsp;</span>
+
+					</div>
+				</div>
+			
+								<!-- BEGIN: LEFT COLUMN -->
+				<div id="ja-leftcol">
+												<div class="moduletable_ad">
+					<div style="text-align:center;">
+<!-- Google AdSense Reg by Joomlaspan :: http://www.joomlaspan.com :: for Joomla! 1.5 -->
+<script type="text/javascript"><!--
+google_ad_client = "pub-1099536334989100";
+google_alternate_ad_url = "http://www.alternate-ad-url.com/alternate";
+google_ad_width = 120; 
+google_ad_height = 600; 
+google_ad_format = "120x600_as"; 
+google_ad_type = "text"; 
+google_ad_channel = "3617953182"; 
+google_color_border = "222222"; 
+google_color_bg = "222222"; 
+google_color_link = "B6D737"; 
+google_color_text = "CCCCCC"; 
+google_color_url = "B6D737"; 
+google_ui_features = "rc:6"; 
+//--> 
+</script>
+<script type="text/javascript" src="linux-cron-tutorial_files/show_ads.js">
+</script>
+<!-- Google AdSense Reg by Joomlaspan :: http://store.joomlaspan.com :: for Joomla! 1.5 -->
+</div>		</div>
+			<div class="moduletable">
+					<h3><span>Forum Activity</span></h3>
+					
+<div class="agoralatestB">
+
+
+
+	<div class="agora_latest_itemB">
+	    <div class="agora_latest_subjectB">
+    	<a href="http://www.tcpdump.com/forums/operating-systems/linux/new-guide-upgrade-to-ubuntu-13.04-in-less-than-20-minutes.html?p=699#p699" class="hasTip">New guide: Upgrade...</a><br>    </div>
+	<div class="agora_latest_avatar_leftB">
+	    </div>
+    <div class="agora_latest_authorB">
+    
+	Author: <a href="http://www.tcpdump.com/forums/profile.html?user_id=5155" class="hasTip">maknesiumblog</a>    </div>
+    <div class="agora_latest_datetimeB">
+	Apr.29.13	</div>
+	<div class="agora_latest_clearB"></div>
+	</div>
+
+	<div class="agora_latest_itemB">
+	    <div class="agora_latest_subjectB">
+    	<a href="http://www.tcpdump.com/forums/messaging/sendmail/nl-ibuprofen-400-kopen-online-22.html?p=698#p698" class="hasTip">nl ibuprofen 400 k...</a><br>    </div>
+	<div class="agora_latest_avatar_leftB">
+	    </div>
+    <div class="agora_latest_authorB">
+    
+	Author: <a href="http://www.tcpdump.com/forums/profile.html?user_id=291" class="hasTip">AdminLady</a>    </div>
+    <div class="agora_latest_datetimeB">
+	Mar.26.13	</div>
+	<div class="agora_latest_clearB"></div>
+	</div>
+
+	<div class="agora_latest_itemB">
+	    <div class="agora_latest_subjectB">
+    	<a href="http://www.tcpdump.com/forums/networking/juniper/cheap-vogue-cigarettes.html?p=697#p697" class="hasTip">cheap vogue cigare...</a><br>    </div>
+	<div class="agora_latest_avatar_leftB">
+	    </div>
+    <div class="agora_latest_authorB">
+    
+	Author: <a href="http://www.tcpdump.com/forums/profile.html?user_id=5119" class="hasTip">Cogterrit</a>    </div>
+    <div class="agora_latest_datetimeB">
+	Dec.04.12	</div>
+	<div class="agora_latest_clearB"></div>
+	</div>
+
+	<div class="agora_latest_itemB">
+	    <div class="agora_latest_subjectB">
+    	<a href="http://www.tcpdump.com/forums/networking/juniper/viceroy-cigarettes-canada.html?p=696#p696" class="hasTip">viceroy cigarettes...</a><br>    </div>
+	<div class="agora_latest_avatar_leftB">
+	    </div>
+    <div class="agora_latest_authorB">
+    
+	Author: <a href="http://www.tcpdump.com/forums/profile.html?user_id=5119" class="hasTip">Cogterrit</a>    </div>
+    <div class="agora_latest_datetimeB">
+	Dec.04.12	</div>
+	<div class="agora_latest_clearB"></div>
+	</div>
+
+	<div class="agora_latest_itemB">
+	    <div class="agora_latest_subjectB">
+    	<a href="http://www.tcpdump.com/forums/networking/juniper/silk-cut-online.html?p=695#p695" class="hasTip">silk cut online</a><br>    </div>
+	<div class="agora_latest_avatar_leftB">
+	    </div>
+    <div class="agora_latest_authorB">
+    
+	Author: <a href="http://www.tcpdump.com/forums/profile.html?user_id=5119" class="hasTip">Cogterrit</a>    </div>
+    <div class="agora_latest_datetimeB">
+	Dec.03.12	</div>
+	<div class="agora_latest_clearB"></div>
+	</div>
+
+	<div class="agora_latest_itemB">
+	    <div class="agora_latest_subjectB">
+    	<a href="http://www.tcpdump.com/forums/networking/juniper/buy-silk-cut.html?p=694#p694" class="hasTip">buy silk cut</a><br>    </div>
+	<div class="agora_latest_avatar_leftB">
+	    </div>
+    <div class="agora_latest_authorB">
+    
+	Author: <a href="http://www.tcpdump.com/forums/profile.html?user_id=5119" class="hasTip">Cogterrit</a>    </div>
+    <div class="agora_latest_datetimeB">
+	Dec.03.12	</div>
+	<div class="agora_latest_clearB"></div>
+	</div>
+
+</div>		</div>
+	
+				</div>
+				<!-- END: LEFT COLUMN -->
+							
+				</div>
+				<!-- END: CONTENT -->
+			
+													<!-- BEGIN: RIGHT COLUMN -->
+				<div id="ja-rightcol">
+
+							<div class="moduletable">
+					<h3><span>New Additions</span></h3>
+					<table style="border-width: 0px; width: 100%">
+	<tbody><tr><td style="padding-right: 2px" valign="top">1.</td><td><a href="http://www.tcpdump.com/kb/virtualization/vmware-esx-server/vcenter-howto/introduction.html" class="latestnews">Configuring VMware vCenter with SQL Server</a></td></tr>
+		<tr><td style="padding-right: 2px" valign="top">2.</td><td><a href="http://www.tcpdump.com/kb/os/linux/red-hat-enterprise-linux-kernel-upgrade.html" class="latestnews">Red Hat Enterprise Linux Kernel Upgrade</a></td></tr>
+		<tr><td style="padding-right: 2px" valign="top">3.</td><td><a href="http://www.tcpdump.com/kb/os/windows/importing-text-files-sql-server.html" class="latestnews">How Do I: Import Text Files with SQL Server Integration Services?</a></td></tr>
+		<tr><td style="padding-right: 2px" valign="top">4.</td><td><a href="http://www.tcpdump.com/kb/os/windows/hierarchyid-data-type-sql-server.html" class="latestnews">How Do I: Using the HierarchyID Data Type in SQL Server 2008 to manage data hierarchies?</a></td></tr>
+		<tr><td style="padding-right: 2px" valign="top">5.</td><td><a href="http://www.tcpdump.com/kb/os/linux/ubuntu-kernel-upgrade-procedure.html" class="latestnews">Ubuntu Kernel Upgrade Procedure</a></td></tr>
+	</tbody></table>
+
+
+
+		</div>
+			<div class="moduletable_ad">
+					<div style="text-align:center;">
+<!-- Google AdSense Reg by Joomlaspan :: http://www.joomlaspan.com :: for Joomla! 1.5 -->
+<script type="text/javascript"><!--
+google_ad_client = "pub-1099536334989100";
+google_alternate_ad_url = "http://www.alternate-ad-url.com/alternate";
+google_ad_width = 160; 
+google_ad_height = 600; 
+google_ad_format = "160x600_as"; 
+google_ad_type = "image"; 
+google_ad_channel = "4355721599"; 
+google_color_border = "222222"; 
+google_color_bg = "222222"; 
+google_color_link = "B6D737"; 
+google_color_text = "333333"; 
+google_color_url = "008000"; 
+google_ui_features = "rc:6"; 
+//--> 
+</script>
+<script type="text/javascript" src="linux-cron-tutorial_files/show_ads.js">
+</script>
+<!-- Google AdSense Reg by Joomlaspan :: http://store.joomlaspan.com :: for Joomla! 1.5 -->
+</div>		</div>
+			<div class="moduletable">
+					<h3><span>Online Stats</span></h3>
+					Guests Online: 166<br>Members Online: 0		</div>
+	
+				</div>
+				<br>
+				<!-- END: RIGHT COLUMN -->
+				
+			</div>
+		</div>
+
+		
+		<!--JAJAX_BLOX:BEGIN-->
+				</div> 
+		<!--END: AJAXWRAP-->
+		<!--JAJAX_BLOX:END-->
+
+		<!-- BEGIN: FOOTER -->
+		<div id="ja-footerwrap" class="clearfix">
+			<div id="ja-footer">
+			  <p id="ja-bottomline">
+					Copyright © 2007 - 2013  - A <a href="http://www.hirtgroup.com/" title="Visit HirtGroup!" target="blank">HirtGroup</a> Company. <br>
+				</p>
+				
+				<div id="ja-cert">
+
+				 <a href="http://www.tcpdump.com//index.php?option=com_rss&amp;feed=RSS2.0&amp;no_html=1" target="_blank" title="RSS 2.0" style="text-decoration: none;">
+					<img src="linux-cron-tutorial_files/but-rss.gif" alt="RSS 2.0">
+				 </a>
+										<a href="http://validator.w3.org/check/referer" target="_blank" title="Our site is valid XHTML 1.0 Transitional" style="text-decoration: none;">
+						<img src="linux-cron-tutorial_files/but-xhtml10.gif" alt="Our site is valid XHTML 1.0 Transitional">
+					</a>
+					<a href="http://www.tcpdump.com/kb/os/linux/linux-cron-tutorial.html#Top" title="Go to top" style="text-decoration: none;">
+						<img src="linux-cron-tutorial_files/but-top.gif" alt="Go to top!">
+					</a>
+				</div>	
+				
+				<!-- Google Analyatics Code - Added by THIRT -->	
+				<script type="text/javascript">
+					var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+					document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+				</script><script src="linux-cron-tutorial_files/ga.js" type="text/javascript"></script>
+				<script type="text/javascript">
+					try {
+					var pageTracker = _gat._getTracker("UA-6872082-1");
+					pageTracker._trackPageview();
+					} catch(err) {}
+				</script>
+
+			</div>
+		</div>
+		<!-- END: FOOTER -->
+
+		</div> <!-- END: ja-wrapper -->
+	</div> <!-- END: page-wrapper -->
+</div> <!-- END: Page-->
+
+<!-- Moopopup - Fancy Popup box from http://www.templateplazza.com -->
+<script src="linux-cron-tutorial_files/AC_OETags.js" language="javascript"></script>  
+<script type="text/javascript">
+/********************************************************************************************
+* PageEar advertising CornerAd by Webpicasso Media
+* Leave copyright notice.  
+*
+* @copyright www.webpicasso.de
+* @author    christian harz <pagepeel-at-webpicasso.de>
+*********************************************************************************************/
+/*
+ *  Konfiguration / Configuration
+ */ 
+
+//  URL to small image 
+var pagearSmallImg = 'modules/mod_pagepeel_banner/pagepeel_banner/clickhere.jpg'; 
+// URL to small pageear swf
+var pagearSmallSwf = 'modules/mod_pagepeel_banner/pagepeel_banner/pageear_s.swf'; 
+
+// URL to big image
+var pagearBigImg = 'http://www.tcpdump.com/images/banners/tcpdump_advertisement.swf'; 
+// URL to big pageear swf
+var pagearBigSwf = 'modules/mod_pagepeel_banner/pagepeel_banner/pageear_b.swf'; 
+
+// Movement speed of small pageear 1-4 (2=Standard)
+var speedSmall = 4; 
+// Mirror image ( true | false )
+var mirror = 'true'; 
+
+// Color of pagecorner if mirror is false
+var pageearColor = 'FFFFFF';  
+
+// URL to open on pageear click
+var jumpTo = '/banners/tcpdump-page-peel-advertisement.html' ;
+
+// Browser target  (new) or self (self)
+var openLink = 'self'; 
+
+// Opens pageear automaticly (false:deactivated | 0.1 - X seconds to open) 
+	var openOnLoad = false;
+ 
+
+// Second until pageear close after openOnLoad
+var closeOnLoad = 5; 
+
+// Set direction of pageear in left or right top browser corner (lt: left | rt: right )
+setDirection = 'rt';
+
+
+//add by remush
+var autoopen = 'disable';
+var behaviour = 'reload';
+
+ 
+
+/*
+ *  Do not change anything after this line
+ */ 
+
+// Flash check vars
+var requiredMajorVersion = 6;
+var requiredMinorVersion = 0;
+var requiredRevision = 0;
+
+// Copyright
+var copyright = 'Webpicasso Media, www.webpicasso.de';
+
+// Size small peel 
+var thumbWidth  = 100;
+var thumbHeight = 100;
+
+// Size big peel
+var bigWidth  = 500;
+var bigHeight = 500;
+
+// Css style default x-position
+var xPos = 'right';
+
+
+
+
+// GET - Params
+var queryParams = 'pagearSmallImg='+escape(pagearSmallImg); 
+queryParams += '&pagearBigImg='+escape(pagearBigImg); 
+queryParams += '&pageearColor='+pageearColor; 
+queryParams += '&jumpTo='+escape(jumpTo); 
+queryParams += '&openLink='+escape(openLink); 
+queryParams += '&mirror='+escape(mirror); 
+queryParams += '&copyright='+escape(copyright); 
+queryParams += '&speedSmall='+escape(speedSmall); 
+queryParams += '&openOnLoad='+escape(openOnLoad); 
+queryParams += '&closeOnLoad='+escape(closeOnLoad); 
+queryParams += '&setDirection='+escape(setDirection); 
+
+
+
+
+function openPeel(){	
+	document.getElementById('bigDiv').style.top = '0px'; 
+	document.getElementById('bigDiv').style[xPos] = '0px';
+	document.getElementById('thumbDiv').style.top = '-1000px';
+	
+		
+}
+
+function closePeel(){	
+	document.getElementById("thumbDiv").style.top = "0px";
+	document.getElementById("bigDiv").style.top = "-1000px";
+	
+}
+
+
+
+
+function writeObjects () {    	
+    // Get installed flashversion
+    var hasReqestedVersion = DetectFlashVer(requiredMajorVersion, requiredMinorVersion, requiredRevision);
+    
+    // Check direction 
+    if(setDirection == 'lt') {
+        xPosBig = 'left:-1000px';  
+        xPos = 'left';      
+    } else {
+        xPosBig = 'right:1000px';
+        xPos = 'right';              
+    }
+    
+	
+    // Write div layer for big swf
+    document.write('<div id="bigDiv" style="position:absolute;width:'+ bigWidth +'px;height:'+ bigHeight +'px;z-index:9999;'+xPosBig+';top:-1000px;">');    	
+    
+    // Check if flash exists/ version matched
+    if (hasReqestedVersion) {    	
+    	AC_FL_RunContent(
+    				"src", pagearBigSwf+'?'+ queryParams,
+    				"width", bigWidth,
+    				"height", bigHeight,
+    				"align", "middle",
+    				"id", "bigSwf",
+    				"quality", "high",
+    				"bgcolor", "#FFFFFF",
+    				"name", "bigSwf",
+    				"wmode", "transparent",
+    				"allowScriptAccess","always",
+    				"type", "application/x-shockwave-flash",
+    				'codebase', 'http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab',
+    				"pluginspage", "http://www.adobe.com/go/getflashplayer"
+    	);
+    } else {  // otherwise do nothing or write message ...    	 
+    	document.write('no flash installed');  // non-flash content
+    } 
+    // Close div layer for big swf
+    document.write('</div>'); 
+    
+    // Write div layer for small swf
+    document.write('<div id="thumbDiv" style="position:absolute;width:'+ thumbWidth +'px;height:'+ thumbHeight +'px;z-index:9999;'+xPos+':0px;top:0px;">');
+    
+    // Check if flash exists/ version matched
+    if (hasReqestedVersion) {    	
+    	AC_FL_RunContent(
+    				"src", pagearSmallSwf+'?'+ queryParams,
+    				"width", thumbWidth,
+    				"height", thumbHeight,
+    				"align", "middle",
+    				"id", "bigSwf",
+    				"quality", "high",
+    				"bgcolor", "#FFFFFF",
+    				"name", "bigSwf",
+    				"wmode", "transparent",
+    				"allowScriptAccess","always",
+    				"type", "application/x-shockwave-flash",
+    				'codebase', 'http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab',
+    				"pluginspage", "http://www.adobe.com/go/getflashplayer"
+    	);
+    } else {  // otherwise do nothing or write message ...    	 
+    	document.write('no flash installed');  // non-flash content
+    } 
+    document.write('</div>');  
+   
+}
+
+
+//added by REMUSH
+//for Set cookies
+
+</script>
+<!-- PagePeel Banner - http://www.templateplazza.com -->
+<script type="text/javascript">    
+    
+writeObjects();	
+</script>
+
+
+
+
+<!-- Used by CB Authorbot for mouse over avatars -->
+<script language="JavaScript1.2" type="text/javascript" src="linux-cron-tutorial_files/wz_tooltip.js"></script>
+
+
+
+
+
+
+<div style="position: absolute; top: 419px; left: 270px; visibility: hidden;" class="tool-tip"><div><div class="tool-title"><span>Go To maknesiumblog's Profile</span></div></div></div><div id="myID" style="top: 263px; left: 417px; position: absolute; width: 430px; height: 330px; visibility: visible; opacity: 1; cursor: move; z-index: 999990000;" class="myBox"><div id="myContent" style="padding: 10px;"><br><br>We thank you for visiting TcpDump and hope you find our knowledge base articles helpful.  However, we need <u><b>your support!!</b></u><br> <br>If
+ you found the content on our site useful, please help support us and 
+visit one of our sponsors sites.  Your support pays for the electric, 
+servers and bandwidth required to run TcpDump and we can’t do it without
+ <b>your help!</b>  <br><br>Thank you again for all your support!<br><br>Best Regards,<br>-Tom Hirt
+<br>
+<br><img src="linux-cron-tutorial_files/logo-green.png"></div><div style="width: 435px; height: auto; background-repeat: repeat-x; background-position: right top; padding: 5px 5px 5px 10px; position: absolute; clear: both; margin-bottom: 10px; top: 0px; left: 0px; color: rgb(238, 238, 238);"><b>Please Help Support Us</b></div><button style="border: medium none; background-image: url(&quot;modules/mod_moopopup/moopopup/images/bg_button.gif&quot;); color: rgb(102, 102, 102); position: absolute; bottom: 3px; right: 3px; width: 44px; height: 19px; font-size: 10px; font-family: arial; cursor: pointer;">close</button></div></body></html>
+<!--JAJAX_BLOX:BEGIN-->
+<!--JAJAX_BLOX:END-->

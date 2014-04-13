@@ -1,0 +1,14 @@
+1. Copy file image to sdcard (/dev/sdb)
+   ====================================
+	+ sudo dd bs=4M if=os.img of=/dev/sdb
+
+2. Show progress
+   =============
+	http://www.cyberciti.biz/faq/linux-unix-dd-command-show-progress-while-coping/
+
+	+ sudo pv -tpreb /dev/sda | dd of=/dev/sdb bs=64M
+
+3. Copy data from 1 partition to another: 
+   =====================================
+	- umount 2 partition
+	- dd if=/dev/sda1 of=/dev/sdb1 bs=4096 conv=notrunc,noerror

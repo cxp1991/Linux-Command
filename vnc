@@ -1,0 +1,12 @@
+server:
+- Install: sudo apt-get install vnc-server
+- Run: vncserver -geometry 800x600 -depth 16:<n>
+/home/pi/.vnc/raspberrypi:<m>.log
+
+Client:
+- Install: sudo apt-get install xtightvncviewer
+- Run: vncviewer <server ip address>:590<m>
+
+Manual: http://www.tightvnc.com/vncserver.1.php
+
+

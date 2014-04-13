@@ -1,0 +1,15 @@
+1. Convert video format
+	ffmpeg -i hello.mov hello.mp4
+        ffmpeg -i 20131126_145655.mp4 -b 1000k -y -f flv -ar 44100 -ab 64k -ac 1 -acodec libmp3lame 20131126_145655.flv
+	
+	-b: video bitrate
+	-ar: sample rate audio
+	-ab: audio bitrate
+
+2. Display video information:
+        ffmpeg -i hello.mov
+
+3. Split video/audio:
+	 ffmpeg -i FIKGcuBbOHM.ogg  -vn -acodec copy -ss 00:00:20 -t 00:02:35 output.ogg
+	Split from 0:20 to 0:02:55
+

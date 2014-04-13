@@ -1,0 +1,9 @@
+1. Download:
+	youtube-dl -t http://www.youtube.com/watch?v=GvbQzRAi4wM
+
+2. List all format:
+	youtube-dl -F http://www.youtube.com/watch?v=GvbQzRAi4wM
+
+3. Download specific format:
+	youtube-dl -f 18 http://www.youtube.com/watch?v=GvbQzRAi4wM
+	#18 is output of [2]

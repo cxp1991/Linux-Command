@@ -1,0 +1,3 @@
+- Get list compure in your network;
+	nmap -sP 10.10.10.*
+

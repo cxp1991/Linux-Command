@@ -1,0 +1,3 @@
+sudo mv /filename /etc/init.d/
+sudo chmod +x /etc/init.d/filename 
+sudo update-rc.d filename defaults 

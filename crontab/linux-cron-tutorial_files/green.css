@@ -1,0 +1,138 @@
+/*------------------------------------------------------------------------
+# JA Zebrina for Joomla 1.5 - Version 1.4 - Licence Owner JA108226
+# ------------------------------------------------------------------------
+# Copyright (C) 2004-2008 J.O.O.M Solutions Co., Ltd. All Rights Reserved.
+# @license - Copyrighted Commercial Software
+# Author: J.O.O.M Solutions Co., Ltd
+# Websites:  http://www.joomlart.com -  http://www.joomlancers.com
+# This file may not be redistributed in whole or significant part.
+-------------------------------------------------------------------------*/
+
+
+a, a:hover, a:active, a:focus {
+	color: #B6D737;
+}
+
+pre, .code {
+/*	border-left: 5px solid #B6D737; */
+	border-left: 0px;
+}
+
+blockquote {
+	background-image: url(../../images/green/quote.gif);
+}
+
+.dropcap, .error, .message, .tips, .bignumber {
+	color: #B6D737;
+}
+
+.highlight {
+	background: #B6D737;
+}
+
+.button {
+	background: url(../../images/green/button-bg.gif) repeat-x top #B6D737;
+border-color: BLACK #787878 #787878 BLACK;
+border-style:solid;
+border-width:1px;
+}
+
+.button:hover {
+	background: url(../../images/green/button-bg.gif) repeat-x top #B6D737;
+	border-color:#787878 BLACK BLACK #787878;
+	border-style:solid;
+	border-width:1px;
+}
+
+
+div.moduletable-hilite h3,
+div.moduletable-pin h3,
+div.moduletable-clip h3,
+div.moduletable-task h3 {
+	color: #B6D737;
+}
+
+div.moduletable-hilite {
+	border: 1px solid #B6D737;
+}
+
+a.readon {
+	color: #B6D737;
+}
+
+a.readon:hover, a.readon:active, a.readon:focus {
+	background: url(../../images/green/bullet-list3.gif) no-repeat 5% 55% #B6D737;
+}
+
+#ja-mainnavwrap {
+	background: url(../../images/green/mainnav-bg.gif) repeat-x top #B6D737;
+	clear: both;
+}
+
+a.mainlevel:hover,
+a.mainlevel:active,
+a.mainlevel:focus,
+a.mainlevel#active_menu {
+	color: #B6D737;
+}
+
+#ja-topslwrap {
+	border-bottom: 3px solid #B6D737;
+}
+
+/* SPLIT MENU
+----------------------------------------------------------- */
+#ja-splitmenu a:hover,
+#ja-splitmenu a:active,
+#ja-splitmenu a:focus {
+	background: #B6D737!important;
+}
+
+#ja-subnav a:hover,
+#ja-subnav a:active,
+#ja-subnav a:focus,
+#ja-subnav li.active_menu a,
+#ja-subnav li.active_menu a:hover,
+#ja-subnav li.active_menu a:active,
+#ja-subnav li.active_menu a:focus {
+	color: #B6D737!important;
+}
+
+/* Son of Suckerfish Dropdowns
+--------------------------------------------------------- */
+#ja-cssmenu li ul {
+	border: 1px solid #9FBD31!important;
+	background: #B6D737!important;
+}
+
+#ja-cssmenu li ul li {
+	border-top: 1px solid #C2DE56!important;
+}
+
+#ja-cssmenu li li a.active {
+	color: #B6D737!important;
+}
+
+#ja-cssmenu li:hover ,
+#ja-cssmenu li.sfhover {
+	background: #B6D737!important;
+}
+
+#ja-cssmenu ul li:hover, #ja-cssmenu ul ul li:hover,
+#ja-cssmenu ul li.sfhover, #ja-cssmenu ul ul li.sfhover {
+	background: #606060!important;
+}
+
+/* Transmenu
+--------------------------------------------------------- */
+.transMenu .background {
+	background-color: #B6D737!important;
+}
+
+a.jahover,
+a.mainlevel-trans:hover,
+a.mainlevel-trans:active,
+a.mainlevel-trans:focus {
+	color: #FFFFFF;
+	background: #B6D737!important;
+}

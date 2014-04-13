@@ -1,0 +1,30 @@
+
+ul#social-nav {
+	position: fixed;
+	margin: 0px;
+	padding: 0px;
+	top: 180px;
+	left: 0px;
+	list-style: none;
+	z-index: 9999;
+}
+
+ul#social-nav li {
+	width: 100px;
+}
+
+ul#social-nav li a {
+	display: block;
+	margin-left: -2px;
+	width: 100px;
+	height: 100px;
+}
+
+ul#social-nav .facebook a {
+	background-image: url(images/xfacebook.png)!important;
+}
+
+ul#social-nav .twitter a {
+	background-image: url(images/xtwitter.png)!important;
+}
+

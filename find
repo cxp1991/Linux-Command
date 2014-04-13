@@ -1,0 +1,72 @@
+---------------------------------------------------
+1.
+	$find /etc -name dns -type f
+
+Tìm tất cả các file có tên là 'dns' tại đường dẫn /etc và cả các thư mục con
+---------------------------------------------------
+2.
+	$find /etc -name dns -type d
+
+Tìm tất cả các directory có tên là 'dns' tại đường dẫn /etc và cả các thư mục con
+----------------------------------------------------
+3.
+	$find /usr /etc -name dns -type f
+
+Ta cũng có thể search một lúc nhiều đường dẫn 
+----------------------------------------------------
+4.
+	$find /etc -not -name dns -type f
+
+Tìm tất cả các file có tên khác 'dns'
+-----------------------------------------------------
+5.
+	$find /etc -name dns* -type f
+
+Thông thường dùng regrex nếu không biết chĩnh xác tên file/folder cần tìm
+----------------------------------------------------
+6.
+	$find /etc -name dns*
+
+Tìm tất các các loại file/folder
+----------------------------------------------------
+7.
+	$find /etc -name mt* -type f -exec ls -l {} \;
+	$find /etc -name mt* -type f -exec grep a* {} \; 
+	$find /etc -name mt* -type f -exec rm {} \;
+
+Ta có thể dùng kết quả tìm kiếm để thực thi một lệnh nào đó.
+----------------------------------------------------
+8. 
+	$ find . -type f \( -name "*.c" -o -name "*.sh" -o -name "*.h" \)
+
+Tìm kiếm với nhiều từ khóa tìm kiếm
+----------------------------------------------------
+9.
+	$find . -iname foo
+
+Tìm kiếm không phân biệt chứ hoa hay thường [fF][oO][oO]
+---------------------------------------------------
+10.
+
+	$find . -name foo -mtime 5 -type f
+
+Tìm các file có tên 'foo' bị modify từ 5 ngày trước trở lại
+---------------------------------------------------
+11.
+	$find dir1 dir2 dir3 dir4 -type d -exec cp ddhead.html {} \;
+
+Copy một file vào nhiều folder
+---------------------------------------------------
+12.
+	$find . -type d
+
+Liệt kê tất cả các folder (kể cả folder con)
+---------------------------------------------------
+13.
+	$find . -maxdepth 1 -type d 
+
+Liệt kê tất cả các folder (kể cả folder con)
+---------------------------------------------------
+14.
+	sed -i 's/old-word/new-word/g' *.txt
+	Đổi cụm từ

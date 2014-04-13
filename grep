@@ -1,0 +1,14 @@
+ - grep -n 'word' file1 file2 file3
+
+ - grep -n 'word' directory 
+	#current directory  - not sub-directory
+
+ - grep -rn 'word' directory 
+	# all directory + sub-directory
+ 
+ - grep -w "word" dile
+	#search exactly word
+
+ - grep -B 10 -A 20 *
+	# search before result 10 line, after 20 line
+	# http://stackoverflow.com/questions/9081/grep-a-file-but-show-several-surrounding-lines

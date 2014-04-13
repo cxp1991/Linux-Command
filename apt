@@ -1,0 +1,39 @@
+1. Search package:
+   ==============
+	$apt-cache search <name packagea>
+
+2. Download pakage: 
+   ===============
+	$sudo apt-get download <name package> <name package> ...
+
+3. Install pakage:
+   ==============
+	$sudo apt-get install <name package> <name package> ...
+
+4. Install package (force):
+   ========================
+	$sudo apt-get install -y <name package> <name package> ...
+
+5. Add reposity:
+   ============
+	$sudo add-apt-reposity "deb http://www.freedesktop.org/software/gstreamer-sdk/data/packages/ubuntu/precise/i386 ./"
+
+6. Update reposity:
+   ===============
+  	$sudo apt-get update
+
+7. Delete package and all configure files:
+   =======================================
+	$sudo apt-get purge <name package> <name package> ...
+
+8. Delete package (not all configure files):
+   =======================================
+	$sudo apt-get remove <name package> <name package> ...
+
+9. Auto remove redundant packages:
+   ==============================
+	$sudo apt-get autoremove
+
+10. Fix apt-get install error:
+    =========================
+	$sudo apt-get -f install

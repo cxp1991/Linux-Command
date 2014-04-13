@@ -1,0 +1,3 @@
++ Unrar:
+	sudo apt-get install unrar
+	unrar x file.rar

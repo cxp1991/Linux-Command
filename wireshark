@@ -1,0 +1,4 @@
+sudo dpkg-reconfigure wireshark-common
+<yes>
+sudo adduser $USER wireshark
+sudo chmod +x /usr/bin/dumpcap

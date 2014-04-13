@@ -1,0 +1,1967 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- jsn_pixel_pro 1.1.2 -->
+<html slick-uniqueid="3" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" dir="ltr" lang="en-gb"><head>
+	  <!-- base href="http://how-to.linuxcareer.com/learning-linux-commands-awk" -->
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="keywords" content="linux, Linux documentation, linux how-to, linux tutorials, Linux Knowledge">
+  <meta name="description" content="LinuxCareer's Documentation">
+  <meta name="generator" content="LinuxCareer.com">
+  <title>Learning Linux Commands: awk - LinuxCareer's Documentation</title>
+  <link href="http://how-to.linuxcareer.com/templates/jsn_pixel_pro/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+  <link href="http://how-to.linuxcareer.com/component/search/?Itemid=1241&amp;format=opensearch" rel="search" title="Search LinuxCareer's Documentation" type="application/opensearchdescription+xml">
+  <link rel="stylesheet" href="learning-linux-commands-awk_files/autotoc.css" type="text/css">
+  <link rel="stylesheet" href="learning-linux-commands-awk_files/modal.css" type="text/css">
+  <link rel="stylesheet" href="learning-linux-commands-awk_files/style.css" type="text/css">
+  <link rel="stylesheet" href="learning-linux-commands-awk_files/bootstrap.css" type="text/css">
+  <link rel="stylesheet" href="learning-linux-commands-awk_files/bootstrap-responsive.css" type="text/css">
+  <link rel="stylesheet" href="learning-linux-commands-awk_files/bootstrap-extended.css" type="text/css">
+  <link rel="stylesheet" href="learning-linux-commands-awk_files/system.css" type="text/css">
+  <link rel="stylesheet" href="learning-linux-commands-awk_files/general.css" type="text/css">
+  <link rel="stylesheet" href="learning-linux-commands-awk_files/template.css" type="text/css">
+  <link rel="stylesheet" href="learning-linux-commands-awk_files/template_grey.css" type="text/css">
+  <link rel="stylesheet" href="learning-linux-commands-awk_files/jsn_mobile.css" type="text/css">
+  <link rel="stylesheet" href="learning-linux-commands-awk_files/jsn_css3.css" type="text/css">
+  <link rel="stylesheet" href="learning-linux-commands-awk_files/css.css" type="text/css">
+  <link rel="stylesheet" href="learning-linux-commands-awk_files/style_002.css" type="text/css">
+  <link rel="stylesheet" href="learning-linux-commands-awk_files/skitter.css" type="text/css">
+  <style type="text/css">
+.jsn-themeslider-skitter-jq0QO .label_skitter {filter:alpha(opacity=75);opacity: 0.75;}.jsn-themeslider-skitter-jq0QO .label_skitter p.jsn-themeslider-caption-title {font-family: Verdana;
+font-size: 12px;
+font-weight: bold;
+text-align: left;
+color: #E9E9E9;}.jsn-themeslider-skitter-jq0QO .label_skitter p.jsn-themeslider-caption-description {font-family: Arial;
+font-size: 11px;
+font-weight: normal;
+text-align: left;
+color: #AFAFAF;}.jsn-themeslider-skitter-jq0QO .label_skitter a.jsn-themeslider-caption-link {font-family: Verdana;
+font-size: 11px;
+font-weight: bold;
+text-align: right;
+color: #E06614;}.jsn-themeslider-skitter-jq0QO .info_slide {top: 15px;}.jsn-themeslider-skitter-jq0QO .info_slide_dots {top: 15px;}
+  </style>
+  <script async="" src="learning-linux-commands-awk_files/cbgapi.loaded_0"></script><script src="learning-linux-commands-awk_files/analytics.html" async=""></script><script gapi_processed="true" src="learning-linux-commands-awk_files/plusone.js" async="" type="text/javascript"></script><script style="color: rgb(0, 0, 0);" src="learning-linux-commands-awk_files/mootools-core.js" type="text/javascript"></script>
+  <script src="learning-linux-commands-awk_files/core.js" type="text/javascript"></script>
+  <script src="learning-linux-commands-awk_files/mootools-more.js" type="text/javascript"></script>
+  <script src="learning-linux-commands-awk_files/modal.js" type="text/javascript"></script>
+  <script src="learning-linux-commands-awk_files/caption.js" type="text/javascript"></script>
+  <script src="learning-linux-commands-awk_files/jquery_004.js" type="text/javascript"></script>
+  <script src="learning-linux-commands-awk_files/jquery-noconflict.js" type="text/javascript"></script>
+  <script src="learning-linux-commands-awk_files/bootstrap.js" type="text/javascript"></script>
+  <script src="learning-linux-commands-awk_files/jsn_noconflict.js" type="text/javascript"></script>
+  <script src="learning-linux-commands-awk_files/jsn_utils.js" type="text/javascript"></script>
+  <script src="learning-linux-commands-awk_files/jsn_template.js" type="text/javascript"></script>
+  <script src="learning-linux-commands-awk_files/jquery.js" type="text/javascript"></script>
+  <script src="learning-linux-commands-awk_files/jsn_is_conflict.js" type="text/javascript"></script>
+  <script src="learning-linux-commands-awk_files/jquery_003.js" type="text/javascript"></script>
+  <script src="learning-linux-commands-awk_files/jquery_002.js" type="text/javascript"></script>
+  <script src="learning-linux-commands-awk_files/jquery_005.js" type="text/javascript"></script>
+  <script type="text/javascript">
+
+		window.addEvent('domready', function() {
+
+			SqueezeBox.initialize({});
+			SqueezeBox.assign($$('a.modal'), {
+				parse: 'rel'
+			});
+		});
+window.addEvent('load', function() {
+				new JCaption('img.caption');
+			});
+		var templateParams					= {};
+		templateParams.templatePrefix		= "jsn_pixel_pro-";
+		templateParams.templatePath			= "/templates/jsn_pixel_pro";
+		templateParams.enableRTL			= false;
+		templateParams.enableGotopLink		= false;
+		templateParams.enableMobile			= true;
+		templateParams.enableMobileMenuSticky	= true;
+
+		JSNTemplate.initTemplate(templateParams);
+
+		window.addEvent('domready', function() {
+
+			SqueezeBox.initialize({});
+			SqueezeBox.assign($$('a.modal'), {
+				parse: 'rel'
+			});
+		});
+window.addEvent('load', function() {
+				new JCaption('img.caption');
+			});
+		var templateParams					= {};
+		templateParams.templatePrefix		= "jsn_pixel_pro-";
+		templateParams.templatePath			= "/templates/jsn_pixel_pro";
+		templateParams.enableRTL			= false;
+		templateParams.enableGotopLink		= false;
+		templateParams.enableMobile			= true;
+		templateParams.enableMobileMenuSticky	= true;
+
+		JSNTemplate.initTemplate(templateParams);
+
+		window.addEvent('domready', function() {
+
+			SqueezeBox.initialize({});
+			SqueezeBox.assign($$('a.modal'), {
+				parse: 'rel'
+			});
+		});
+		window.addEvent('domready', function() {
+
+			SqueezeBox.initialize({});
+			SqueezeBox.assign($$('a.modal'), {
+				parse: 'rel'
+			});
+		});
+  </script>
+  <meta property="og:title" content="Learning Linux Commands: awk">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="http://how-to.linuxcareer.com/learning-linux-commands-awk">
+  <meta property="og:image" content="http://how-to.linuxcareer.com/plugins/content/jesocialsharebuttons/images/state_emblem_of_mongolia.png">
+  <meta property="og:site_name" content="LinuxCareer's Documentation">
+  <meta property="og:description" content="">
+  <link rel="image_src" href="http://how-to.linuxcareer.com/plugins/content/jesocialsharebuttons/images/state_emblem_of_mongolia.png">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><style type="text/css">
+	#jsn-header-inner,
+	#jsn-body-inner,
+	#jsn-content-bottom-inner,
+	#jsn-footer-inner {
+		width: 1150px;
+	}
+		
+	#jsn-pos-promo-left {
+		float: left;
+		width: 19%;
+		left: -100%;
+	}
+	#jsn-pos-promo {
+		width: 100%;
+		left: 0;
+	}
+	#jsn-pos-promo-right {
+		float: right;
+		width: 23%;
+	}
+	
+	#jsn-leftsidecontent {
+		float: left;
+		width: 23%;
+		left: -100%;
+	}
+	#jsn-maincontent {
+		float: left;
+		width: 100%;
+		left: 0;
+	}
+	#jsn-rightsidecontent {
+		float: right;
+		width: 23%;
+	}
+	
+	div.jsn-hasinnerleft #mainbody-content-inner1 {
+		left: -72%;
+	}
+	div.jsn-hasinnerleft #mainbody-content-inner2 {
+		left: 72%;
+	}
+	div.jsn-hasinnerright #mainbody-content-inner1 {
+		left: -28%;
+	}
+	div.jsn-hasinnerright #mainbody-content-inner2 {
+		left: 28%;
+	}
+	#jsn-pos-innerleft {
+		float: left;
+		width: 28%;
+		left: -72%;
+	}
+	#mainbody-content-inner {
+		width: 72%;
+		left: 0;
+		float: left;
+		position: relative;
+	}
+	#jsn-pos-innerright {
+		float: right;
+		width: 28%;
+	}
+	
+		body.jsn-textstyle-news {
+			font-family: "Times New Roman", Times, serif;
+		}
+		
+		body.jsn-textstyle-news h1,
+		body.jsn-textstyle-news h2,
+		body.jsn-textstyle-news h3,
+		body.jsn-textstyle-news h4,
+		body.jsn-textstyle-news h5,
+		body.jsn-textstyle-news h6,
+		body.jsn-textstyle-news #jsn-menu a,
+		body.jsn-textstyle-news #jsn-menu span,
+		body.jsn-textstyle-news .componentheading,
+		body.jsn-textstyle-news .contentheading,
+		body.jsn-textstyle-news .pathway,
+		body.jsn-textstyle-news #jsn-gotoplink {
+				font-family: 'Gentium Book Basic', "Palatino Linotype", Palatino, serif;
+			}
+		
+		body.jsn-textstyle-news.jsn-textsize-medium {
+			font-size: 85%;
+		}
+	
+		div.jsn-modulecontainer ul.menu-mainmenu ul,
+		div.jsn-modulecontainer ul.menu-mainmenu ul li {
+			width: 200px;
+		}
+		div.jsn-modulecontainer ul.menu-mainmenu ul ul {
+			margin-left: 199px;
+		}
+		#jsn-pos-toolbar div.jsn-modulecontainer ul.menu-mainmenu ul ul {
+			margin-right: 199px;
+					margin-left : auto
+		}
+		
+		div.jsn-modulecontainer ul.menu-sidemenu ul,
+		div.jsn-modulecontainer ul.menu-sidemenu ul li {
+			width: 200px;
+		}
+		div.jsn-modulecontainer ul.menu-sidemenu li ul {
+			right: -200px;
+		}
+		body.jsn-direction-rtl div.jsn-modulecontainer ul.menu-sidemenu li ul {
+			left: -200px;
+			right: auto;
+		}
+		div.jsn-modulecontainer ul.menu-sidemenu ul ul {
+			margin-left: 200px;
+		}
+		</style>	<!-- html5.js for IE less than 9 -->
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- css3-mediaqueries.js for IE less than 9 -->
+	<!--[if lt IE 9]>
+		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+</head>
+<body id="jsn-master" class="jsn-textstyle-news jsn-textsize-medium jsn-color-grey jsn-direction-ltr jsn-specialfont jsn-css3 jsn-mobile jsn-joomla-30">
+	<a name="top" id="top"></a>
+	<div id="jsn-page">
+			<div id="jsn-pos-stick-righttop">
+			<div class=" jsn-modulecontainer"><div class="jsn-modulecontainer_inner"><div class="jsn-modulecontent">
+<div>
+	<link rel="stylesheet" href="learning-linux-commands-awk_files/social.css" type="text/css" media="screen">
+
+	
+
+<script type="text/javascript" src="learning-linux-commands-awk_files/jquery_006.js"></script>
+<style type="text/css">
+#main-menu{
+	 visibility:hidden;}
+</style>
+
+
+    
+	
+        <ul id="social-nav">
+            <li class="facebook"><a style="margin-left: -90px;" href="http://www.facebook.com/LINUXCAREER" rel="nofollow" target="_blank" title="Facebook"></a></li>
+            <li class="twitter"><a style="margin-left: -90px;" href="http://twitter.com/LINUXCAREER" rel="nofollow" target="_blank" title="Twitter"></a></li>
+        </ul>
+        
+        <script type="text/javascript">
+                    $(function() {
+                        $('#social-nav a').stop().animate({'marginLeft':'-90px'},0);
+        
+                        $('#social-nav > li').hover(
+                            function () {
+                                $('a',$(this)).stop().animate({'marginLeft':'-22px'},150);
+                            },
+                            function () {
+                                $('a',$(this)).stop().animate({'marginLeft':'-90px'},1500);
+                            }
+                        );
+                    });
+        </script></div><div class="clearbreak"></div></div></div></div>
+		</div>
+			<div id="jsn-pos-stick-rightbottom">
+			<div class=" jsn-modulecontainer"><div class="jsn-modulecontainer_inner"><div class="jsn-modulecontent">
+<div>
+	<p><a href="http://eepurl.com/yW9qr" title="Newsletter"><img src="learning-linux-commands-awk_files/newsletter.png" height="101" width="36"></a></p>
+<p><a href="http://www.linuxcareer.com/contact" title="Feedback"><img src="learning-linux-commands-awk_files/feedback.png" height="101" width="36"></a></p></div><div class="clearbreak"></div></div></div></div>
+		</div>
+			<div id="jsn-header" class="clearafter">
+			<div id="jsn-header-inner" class="clearafter">
+				<div id="jsn-logo">
+				<h1 class="jsn-topheading">LinuxCareer's Documentation - Linux Career</h1><a href="http://www.linuxcareer.com/" title="Linux Career | Linux Jobs and Advice"><img src="learning-linux-commands-awk_files/logo.png" alt="Linux Career" id="jsn-logo-desktop"></a>				</div>
+				<div id="jsn-headerright-wrapper">
+									<div id="jsn-headerright">
+						<div id="jsn-pos-top">
+							<div class=" jsn-modulecontainer"><div class="jsn-modulecontainer_inner"><div class="jsn-modulecontent"><span class="jsn-menu-toggle">Menu</span>
+<ul class="menu-topmenu menu-iconmenu">
+<li class="first jsn-icon-comment">	<a href="http://www.linuxcareer.com/suggest-news">
+		<span>
+		Suggest News		</span>
+	</a>
+	</li><li class="jsn-icon-mail">	<a href="http://www.linuxcareer.com/contact">
+		<span>
+		Contact us		</span>
+	</a>
+	</li><li class="jsn-icon-info">	<a href="http://www.linuxcareer.com/about-us">
+		<span>
+		About us		</span>
+	</a>
+	</li><li class="jsn-icon-rss">	<a href="http://feeds.feedburner.com/LinuxCareerNews">
+		<span>
+		News RSS		</span>
+	</a>
+	</li><li class="last">	<a href="http://feeds.feedburner.com/Linuxcareercom-ItCareerResources">
+		<span>
+		Tech RSS		</span>
+	</a>
+	</li></ul><div class="clearbreak"></div></div></div></div>
+						</div>
+					</div>
+					<div class="clearbreak"></div>
+								
+								<div id="jsn-menu">
+					<div id="jsn-menu-inner-1">
+						<div id="jsn-menu-inner">
+													<div id="jsn-pos-mainmenu">
+								<div class=" jsn-modulecontainer"><div class="jsn-modulecontainer_inner"><div class="jsn-modulecontent"><span class="jsn-menu-toggle">Menu</span>
+<ul class="menu-mainmenu menu-iconmenu">
+<li class="first jsn-icon-home">	<a href="http://www.linuxcareer.com/" title="Default contents">
+		<span>
+		<span class="jsn-menutitle">Home</span><span class="jsn-menudescription">Default contents</span>		</span>
+	</a>
+	</li><li class="parent jsn-icon-search">	<a href="http://www.linuxcareer.com/linux-jobs-search">
+		<span>
+		Jobs		</span>
+	</a>
+	<span class="jsn-menu-toggle"></span><ul><li class="parent first"><a href="javascript:%20void(0)">
+	<span>
+		Africa	</span>
+  </a>
+<ul><li class="parent first">	<a href="http://www.linuxcareer.com/linux-jobs-search/africa/linux-jobs-south-africa">
+		<span>
+		South Africa		</span>
+	</a>
+	<ul><li class="first">	<a href="http://www.linuxcareer.com/linux-jobs-search/africa/linux-jobs-south-africa/cape-town">
+		<span>
+		Cape Town		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/africa/linux-jobs-south-africa/durban">
+		<span>
+		Durban		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/africa/linux-jobs-south-africa/johannesburg">
+		<span>
+		Johannesburg		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/africa/linux-jobs-south-africa/soweto">
+		<span>
+		Soweto		</span>
+	</a>
+	</li><li class="last">	<a href="http://www.linuxcareer.com/linux-jobs-search/africa/linux-jobs-south-africa/pretoria">
+		<span>
+		Pretoria		</span>
+	</a>
+	</li></ul></li></ul></li><li class="parent"><a href="javascript:%20void(0)">
+	<span>
+		Asia / Pacific	</span>
+  </a>
+<ul><li class="parent first">	<a href="http://www.linuxcareer.com/linux-jobs-search/asia-pacific/linux-jobs-australia">
+		<span>
+		Australia		</span>
+	</a>
+	<ul><li class="first">	<a href="http://www.linuxcareer.com/linux-jobs-search/asia-pacific/linux-jobs-australia/sydney">
+		<span>
+		Sydney		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/asia-pacific/linux-jobs-australia/melbourne">
+		<span>
+		Melbourne		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/asia-pacific/linux-jobs-australia/perth">
+		<span>
+		Perth		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/asia-pacific/linux-jobs-australia/adelaide">
+		<span>
+		Adelaide		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/asia-pacific/linux-jobs-australia/brisbane">
+		<span>
+		Brisbane		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/asia-pacific/linux-jobs-australia/gold-coast">
+		<span>
+		Gold Coast		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/asia-pacific/linux-jobs-australia/newcastle">
+		<span>
+		Newcastle		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/asia-pacific/linux-jobs-australia/canberra">
+		<span>
+		Canberra		</span>
+	</a>
+	</li><li class="last">	<a href="http://www.linuxcareer.com/linux-jobs-search/asia-pacific/linux-jobs-australia/wollongong">
+		<span>
+		Wollongong		</span>
+	</a>
+	</li></ul></li><li class="parent">	<a href="http://www.linuxcareer.com/linux-jobs-search/asia-pacific/linux-jobs-china">
+		<span>
+		China		</span>
+	</a>
+	<ul><li class="first">	<a href="http://www.linuxcareer.com/linux-jobs-search/asia-pacific/linux-jobs-china/shanghai">
+		<span>
+		上海		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/asia-pacific/linux-jobs-china/zhumadian">
+		<span>
+		河南省駐馬店		</span>
+	</a>
+	</li><li class="last">	<a href="http://www.linuxcareer.com/linux-jobs-search/asia-pacific/linux-jobs-china/beijing">
+		<span>
+		北京		</span>
+	</a>
+	</li></ul></li><li class="parent">	<a href="http://www.linuxcareer.com/linux-jobs-search/asia-pacific/linux-jobs-india">
+		<span>
+		India		</span>
+	</a>
+	<ul><li class="first">	<a href="http://www.linuxcareer.com/linux-jobs-search/asia-pacific/linux-jobs-india/mumbai">
+		<span>
+		Mumbai		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/asia-pacific/linux-jobs-india/delhi">
+		<span>
+		Delhi		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/asia-pacific/linux-jobs-india/bangalore">
+		<span>
+		Bangalore		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/asia-pacific/linux-jobs-india/kolkata">
+		<span>
+		Kolkata		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/asia-pacific/linux-jobs-india/chennai">
+		<span>
+		Chennai		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/asia-pacific/linux-jobs-india/ahmedabad">
+		<span>
+		Ahmadābād		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/asia-pacific/linux-jobs-india/hyderabad">
+		<span>
+		Hyderābād		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/asia-pacific/linux-jobs-india/pune">
+		<span>
+		Pune		</span>
+	</a>
+	</li><li class="last">	<a href="http://www.linuxcareer.com/linux-jobs-search/asia-pacific/linux-jobs-india/surat">
+		<span>
+		Sūrat		</span>
+	</a>
+	</li></ul></li><li class="parent">	<a href="http://www.linuxcareer.com/linux-jobs-search/asia-pacific/linux-jobs-japan">
+		<span>
+		Japan		</span>
+	</a>
+	<ul><li class="first">	<a href="http://www.linuxcareer.com/linux-jobs-search/asia-pacific/linux-jobs-japan/tokyo">
+		<span>
+		東京		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/asia-pacific/linux-jobs-japan/yokohama-shi">
+		<span>
+		横浜市		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/asia-pacific/linux-jobs-japan/osaka-shi">
+		<span>
+		大阪市		</span>
+	</a>
+	</li><li class="last">	<a href="http://www.linuxcareer.com/linux-jobs-search/asia-pacific/linux-jobs-japan/nagoya-shi">
+		<span>
+		名古屋市		</span>
+	</a>
+	</li></ul></li><li class="parent">	<a href="http://www.linuxcareer.com/linux-jobs-search/asia-pacific/linux-jobs-korea">
+		<span>
+		Korea		</span>
+	</a>
+	<ul><li class="first">	<a href="http://www.linuxcareer.com/linux-jobs-search/asia-pacific/linux-jobs-korea/seoul">
+		<span>
+		서울특별시		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/asia-pacific/linux-jobs-korea/busan">
+		<span>
+		부산		</span>
+	</a>
+	</li><li class="last">	<a href="http://www.linuxcareer.com/linux-jobs-search/asia-pacific/linux-jobs-korea/incheon">
+		<span>
+		인천		</span>
+	</a>
+	</li></ul></li><li class="parent">	<a href="http://www.linuxcareer.com/linux-jobs-search/asia-pacific/linux-jobs-russia">
+		<span>
+		Russia		</span>
+	</a>
+	<ul><li class="first">	<a href="http://www.linuxcareer.com/linux-jobs-search/asia-pacific/linux-jobs-russia/moscow">
+		<span>
+		Москва		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/asia-pacific/linux-jobs-russia/saint-petersburg">
+		<span>
+		Санкт-Петербург		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/asia-pacific/linux-jobs-russia/novosibirsk">
+		<span>
+		Новосибирск		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/asia-pacific/linux-jobs-russia/yekaterinburg">
+		<span>
+		Екатеринбург		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/asia-pacific/linux-jobs-russia/nizhniy-novgorod">
+		<span>
+		Нижний Новгород		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/asia-pacific/linux-jobs-russia/omsk">
+		<span>
+		Омск		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/asia-pacific/linux-jobs-russia/kazan">
+		<span>
+		Казань		</span>
+	</a>
+	</li><li class="last">	<a href="http://www.linuxcareer.com/linux-jobs-search/asia-pacific/linux-jobs-russia/rostov-na-donu">
+		<span>
+		Ростов-на-Дону		</span>
+	</a>
+	</li></ul></li></ul></li><li class="parent"><a href="javascript:%20void(0)">
+	<span>
+		Europe	</span>
+  </a>
+<ul><li class="parent first">	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-austria">
+		<span>
+		Austria		</span>
+	</a>
+	<ul><li class="first">	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-austria/vienna">
+		<span>
+		Wien		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-austria/graz">
+		<span>
+		Graz		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-austria/linz">
+		<span>
+		Linz		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-austria/salzburg">
+		<span>
+		Salzburg		</span>
+	</a>
+	</li><li class="last">	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-austria/innsbruck">
+		<span>
+		Innsbruck		</span>
+	</a>
+	</li></ul></li><li class="parent">	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-belgium">
+		<span>
+		Belgium		</span>
+	</a>
+	<ul><li class="first">	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-belgium/brussels">
+		<span>
+		Brussels		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-belgium/antwerpen">
+		<span>
+		Antwerpen		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-belgium/gent">
+		<span>
+		Gent		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-belgium/charleroi">
+		<span>
+		Charleroi		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-belgium/liege">
+		<span>
+		Liège		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-belgium/brugge">
+		<span>
+		Brugge		</span>
+	</a>
+	</li><li class="last">	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-belgium/namur">
+		<span>
+		Namur		</span>
+	</a>
+	</li></ul></li><li class="parent">	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-france">
+		<span>
+		France		</span>
+	</a>
+	<ul><li class="first">	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-france/paris">
+		<span>
+		Paris		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-france/marseille">
+		<span>
+		Marseille		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-france/lyon">
+		<span>
+		Lyon		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-france/toulouse">
+		<span>
+		Toulouse		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-france/nice">
+		<span>
+		Nice		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-france/nantes">
+		<span>
+		Nantes		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-france/strasbourg">
+		<span>
+		Strasbourg		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-france/montpellier">
+		<span>
+		Montpellier		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-france/bordeaux">
+		<span>
+		Bordeaux		</span>
+	</a>
+	</li><li class="last">	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-france/lille">
+		<span>
+		Lille		</span>
+	</a>
+	</li></ul></li><li class="parent">	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-germany">
+		<span>
+		Germany		</span>
+	</a>
+	<ul><li class="first">	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-germany/berlin">
+		<span>
+		Berlin		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-germany/hamburg">
+		<span>
+		Hamburg		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-germany/muenchen">
+		<span>
+		München		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-germany/koeln">
+		<span>
+		Köln		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-germany/frankfurt-am-main">
+		<span>
+		Frankfurt am Main		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-germany/essen">
+		<span>
+		Essen		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-germany/stuttgart">
+		<span>
+		Stuttgart		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-germany/dortmund">
+		<span>
+		Dortmund		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-germany/duesseldorf">
+		<span>
+		Düsseldorf		</span>
+	</a>
+	</li><li class="last">	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-germany/bremen">
+		<span>
+		Bremen		</span>
+	</a>
+	</li></ul></li><li class="parent">	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-ireland">
+		<span>
+		Ireland		</span>
+	</a>
+	<ul><li class="first">	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-ireland/dublin">
+		<span>
+		Dublin		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-ireland/cork">
+		<span>
+		Cork		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-ireland/dun-laoghaire">
+		<span>
+		Dún Laoghaire		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-ireland/luimneach">
+		<span>
+		Luimneach		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-ireland/gaillimh">
+		<span>
+		Gaillimh		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-ireland/tallaght">
+		<span>
+		Tallaght		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-ireland/waterford">
+		<span>
+		Waterford		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-ireland/drogheda">
+		<span>
+		Drogheda		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-ireland/dundalk">
+		<span>
+		Dundalk		</span>
+	</a>
+	</li><li class="last">	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-ireland/bray">
+		<span>
+		Bray		</span>
+	</a>
+	</li></ul></li><li class="parent">	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-italy">
+		<span>
+		Italy		</span>
+	</a>
+	<ul><li class="first">	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-italy/roma">
+		<span>
+		Roma		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-italy/milano">
+		<span>
+		Milano		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-italy/napoli">
+		<span>
+		Napoli		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-italy/turin">
+		<span>
+		Turin		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-italy/palermo">
+		<span>
+		Palermo		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-italy/genova">
+		<span>
+		Genova		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-italy/firenze">
+		<span>
+		Firenze		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-italy/bologna">
+		<span>
+		Bologna		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-italy/bari">
+		<span>
+		Bari		</span>
+	</a>
+	</li><li class="last">	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-italy/catania">
+		<span>
+		Catania		</span>
+	</a>
+	</li></ul></li><li class="parent">	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-netherlands">
+		<span>
+		Netherlands		</span>
+	</a>
+	<ul><li class="first">	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-netherlands/amsterdam">
+		<span>
+		Amsterdam		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-netherlands/rotterdam">
+		<span>
+		Rotterdam		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-netherlands/the-hague">
+		<span>
+		The Hague		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-netherlands/utrecht">
+		<span>
+		Utrecht		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-netherlands/eindhoven">
+		<span>
+		Eindhoven		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-netherlands/tilburg">
+		<span>
+		Tilburg		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-netherlands/groningen">
+		<span>
+		Groningen		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-netherlands/almere-stad">
+		<span>
+		Almere Stad		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-netherlands/breda">
+		<span>
+		Breda		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-netherlands/nijmegen">
+		<span>
+		Nijmegen		</span>
+	</a>
+	</li><li class="last">	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-netherlands/lisbon">
+		<span>
+		Lisbon		</span>
+	</a>
+	</li></ul></li><li class="parent">	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-portugal">
+		<span>
+		Portugal		</span>
+	</a>
+	<ul><li class="first">	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-portugal/porto">
+		<span>
+		Porto		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-portugal/amadora">
+		<span>
+		Amadora		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-portugal/braga">
+		<span>
+		Braga		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-portugal/setubal">
+		<span>
+		Setúbal		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-portugal/coimbra">
+		<span>
+		Coimbra		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-portugal/queluz">
+		<span>
+		Queluz		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-portugal/funchal">
+		<span>
+		Funchal		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-portugal/cacem">
+		<span>
+		Cacém		</span>
+	</a>
+	</li><li class="last">	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-portugal/vila-nova-de-gaia">
+		<span>
+		Vila Nova de Gaia		</span>
+	</a>
+	</li></ul></li><li class="parent">	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-spain">
+		<span>
+		Spain		</span>
+	</a>
+	<ul><li class="first">	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-spain/madrid">
+		<span>
+		Madrid		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-spain/barcelona">
+		<span>
+		Barcelona		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-spain/valencia">
+		<span>
+		Valencia		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-spain/sevilla">
+		<span>
+		Sevilla		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-spain/zaragoza">
+		<span>
+		Zaragoza		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-spain/malaga">
+		<span>
+		Málaga		</span>
+	</a>
+	</li><li class="last">	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-spain/murcia">
+		<span>
+		Murcia		</span>
+	</a>
+	</li></ul></li><li class="parent">	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-sweden">
+		<span>
+		Sweden		</span>
+	</a>
+	<ul><li class="first">	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-sweden/stockholm">
+		<span>
+		Stockholm		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-sweden/goeteborg">
+		<span>
+		Göteborg		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-sweden/malmoe">
+		<span>
+		Malmö		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-sweden/uppsala">
+		<span>
+		Uppsala		</span>
+	</a>
+	</li><li class="last">	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-sweden/kista">
+		<span>
+		Kista		</span>
+	</a>
+	</li></ul></li><li class="parent">	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-switzerland">
+		<span>
+		Switzerland		</span>
+	</a>
+	<ul><li class="first">	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-switzerland/zuerich">
+		<span>
+		Zürich		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-switzerland/geneve">
+		<span>
+		Genève		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-switzerland/basel">
+		<span>
+		Basel		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-switzerland/bern">
+		<span>
+		Bern		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-switzerland/lausanne">
+		<span>
+		Lausanne		</span>
+	</a>
+	</li><li class="last">	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-switzerland/winterthur">
+		<span>
+		Winterthur		</span>
+	</a>
+	</li></ul></li><li class="parent">	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-united-kingdom">
+		<span>
+		United Kingdom		</span>
+	</a>
+	<ul><li class="first">	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-united-kingdom/london">
+		<span>
+		London		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-united-kingdom/birmingham">
+		<span>
+		Birmingham		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-united-kingdom/glasgow">
+		<span>
+		Glasgow		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-united-kingdom/liverpool">
+		<span>
+		Liverpool		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-united-kingdom/leeds">
+		<span>
+		Leeds		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-united-kingdom/sheffield">
+		<span>
+		Sheffield		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-united-kingdom/edinburgh">
+		<span>
+		Edinburgh		</span>
+	</a>
+	</li><li class="last">	<a href="http://www.linuxcareer.com/linux-jobs-search/europe/linux-jobs-united-kingdom/bristol">
+		<span>
+		Bristol		</span>
+	</a>
+	</li></ul></li></ul></li><li class="parent"><a href="javascript:%20void(0)">
+	<span>
+		South America	</span>
+  </a>
+<ul><li class="parent first">	<a href="http://www.linuxcareer.com/linux-jobs-search/south-america/linux-jobs-argentina">
+		<span>
+		Argentina		</span>
+	</a>
+	<ul><li class="first">	<a href="http://www.linuxcareer.com/linux-jobs-search/south-america/linux-jobs-argentina/buenos-aires">
+		<span>
+		Buenos Aires		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/south-america/linux-jobs-argentina/cordoba">
+		<span>
+		Córdoba		</span>
+	</a>
+	</li><li class="last">	<a href="http://www.linuxcareer.com/linux-jobs-search/south-america/linux-jobs-argentina/mendoza">
+		<span>
+		Mendoza		</span>
+	</a>
+	</li></ul></li><li class="parent">	<a href="http://www.linuxcareer.com/linux-jobs-search/south-america/linux-jobs-brazil">
+		<span>
+		Brazil		</span>
+	</a>
+	<ul><li class="first">	<a href="http://www.linuxcareer.com/linux-jobs-search/south-america/linux-jobs-brazil/sao-paulo">
+		<span>
+		São Paulo		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/south-america/linux-jobs-brazil/rio-de-janeiro">
+		<span>
+		Rio de Janeiro		</span>
+	</a>
+	</li><li class="last">	<a href="http://www.linuxcareer.com/linux-jobs-search/south-america/linux-jobs-brazil/salvador">
+		<span>
+		Salvador		</span>
+	</a>
+	</li></ul></li></ul></li><li class="parent last"><a href="javascript:%20void(0)">
+	<span>
+		North America	</span>
+  </a>
+<ul><li class="parent first last">	<a href="http://www.linuxcareer.com/linux-jobs-search/north-america/linux-jobs-canada">
+		<span>
+		Canada		</span>
+	</a>
+	<ul><li class="first">	<a href="http://www.linuxcareer.com/linux-jobs-search/north-america/linux-jobs-canada/toronto">
+		<span>
+		Toronto		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/north-america/linux-jobs-canada/montreal">
+		<span>
+		Montréal		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/north-america/linux-jobs-canada/vancouver">
+		<span>
+		Vancouver		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/north-america/linux-jobs-canada/calgary">
+		<span>
+			Calgary		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/north-america/linux-jobs-canada/ottawa">
+		<span>
+		Ottawa		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/north-america/linux-jobs-canada/edmonton">
+		<span>
+		Edmonton		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/north-america/linux-jobs-canada/mississauga">
+		<span>
+		Mississauga		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/north-america/linux-jobs-canada/north-york">
+		<span>
+		North York		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/north-america/linux-jobs-canada/winnipeg">
+		<span>
+		Winnipeg		</span>
+	</a>
+	</li><li class="last">	<a href="http://www.linuxcareer.com/linux-jobs-search/north-america/linux-jobs-canada/quebec">
+		<span>
+		Québec		</span>
+	</a>
+	</li></ul></li><li class="parent last">	<a href="http://www.linuxcareer.com/linux-jobs-search/north-america/linux-jobs-mexico">
+		<span>
+		Mexico		</span>
+	</a>
+	<ul><li class="first last">	<a href="http://www.linuxcareer.com/linux-jobs-search/north-america/linux-jobs-mexico/mexico-city">
+		<span>
+		Mexico City		</span>
+	</a>
+	</li></ul></li><li class="parent last">	<a href="http://www.linuxcareer.com/linux-jobs-search/north-america/linux-jobs-united-states">
+		<span>
+		United States		</span>
+	</a>
+	<ul><li class="first">	<a href="http://www.linuxcareer.com/linux-jobs-search/north-america/linux-jobs-united-states/new-york">
+		<span>
+		New York		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/north-america/linux-jobs-united-states/los-angeles">
+		<span>
+		Los Angeles		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/north-america/linux-jobs-united-states/chicago">
+		<span>
+		Chicago		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/north-america/linux-jobs-united-states/brooklyn">
+		<span>
+		Brooklyn		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/north-america/linux-jobs-united-states/houston">
+		<span>
+		Houston		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/north-america/linux-jobs-united-states/philadelphia">
+		<span>
+		Philadelphia		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/linux-jobs-search/north-america/linux-jobs-united-states/manhattan">
+		<span>
+		Manhattan		</span>
+	</a>
+	</li><li class="last">	<a href="http://www.linuxcareer.com/linux-jobs-search/north-america/linux-jobs-united-states/phoenix">
+		<span>
+		Phoenix		</span>
+	</a>
+	</li></ul></li></ul></li></ul></li><li class="parent jsn-icon-help">	<a href="https://linuxacademy.com/">
+		<span>
+		Training		</span>
+	</a>
+	<span class="jsn-menu-toggle"></span><ul><li class="parent first"><a href="javascript:%20void(0)">
+	<span>
+		Linux Academy	</span>
+  </a>
+<ul><li class="first">	<a href="http://linuxacademy.com/signup/">
+		<span>
+		Sign Up!		</span>
+	</a>
+	</li><li>	<a href="http://linuxacademy.com/a/login">
+		<span>
+		Linux Academy Login		</span>
+	</a>
+	</li><li>	<a href="http://linuxacademy.com/tour">
+		<span>
+		Take the tour		</span>
+	</a>
+	</li><li class="last">	<a href="http://linuxacademy.com/outline">
+		<span>
+		Courses Outline		</span>
+	</a>
+	</li></ul></li><li class="parent last"><a href="javascript:%20void(0)">
+	<span>
+		Practice Quizzes	</span>
+  </a>
+<ul><li class="parent first last"><a href="javascript:%20void(0)">
+	<span>
+		LPI	</span>
+  </a>
+<ul><li class="first last">	<a href="http://www.linuxcareer.com/linux-lpi-101-practice-quiz">
+		<span>
+		LPI 101		</span>
+	</a>
+	</li></ul></li><li class="last">	<a href="http://www.linuxcareer.com/linux-interview-questions/">
+		<span>
+		Linux Interview Questions		</span>
+	</a>
+	</li></ul></li></ul></li><li class="jsn-icon-statistics">	<a href="http://www.linuxcareer.com/it-skills-watch">
+		<span>
+		IT skills watch		</span>
+	</a>
+	</li><li class="parent jsn-icon-info"><a href="http://how-to.linuxcareer.com/" title="Start here">
+	<span>
+		<span class="jsn-menutitle">Docs</span><span class="jsn-menudescription">Start here</span>	</span>
+</a><span class="jsn-menu-toggle"></span><ul><li class="first last">	<a href="http://linuxcareer.tradepub.com/">
+		<span>
+		Free Linux eBooks		</span>
+	</a>
+	</li></ul></li><li class="last jsn-icon-ask">	<a href="http://forum.linuxcareer.com/">
+		<span>
+		Forum		</span>
+	</a>
+	</li></ul><div class="clearbreak"></div></div></div></div>
+							</div>
+													<span id="jsn-desktopswitch">
+								<a href="http://how-to.linuxcareer.com/learning-linux-commands-awk?jsn_setmobile=no"></a>
+							</span>
+							<span id="jsn-mobileswitch">
+								<a href="http://how-to.linuxcareer.com/learning-linux-commands-awk?jsn_setmobile=yes"></a>
+							</span>
+													<div id="jsn-pos-toolbar">
+								<div class="jsn-icon-search jsn-modulecontainer"><div class="jsn-modulecontainer_inner"><div class="jsn-modulecontent"><form action="/learning-linux-commands-awk" method="post">
+	<div class="search">
+		<label for="mod-search-searchword"></label><input name="searchword" id="mod-search-searchword" maxlength="20" class="inputbox" size="20" value="search ..." onblur="if (this.value=='') this.value='search ...';" onfocus="if (this.value=='search ...') this.value='';" type="text">	<input name="task" value="search" type="hidden">
+	<input name="option" value="com_search" type="hidden">
+	<input name="Itemid" value="1241" type="hidden">
+	</div>
+</form>
+<div class="clearbreak"></div></div></div></div>
+							</div>
+												<div class="clearbreak"></div>
+					</div>
+					</div>
+				</div>
+								</div>
+			</div>
+		</div>
+		<div id="jsn-body">
+			<div id="jsn-body-inner">
+							<div id="jsn-promo" class="">
+										<div id="jsn-pos-promo">
+							<div id="jsn-pos-promo_inner">
+								<div class=" jsn-modulecontainer"><div class="jsn-modulecontainer_inner"><div class="jsn-modulecontent">
+<div>
+	<div><center>
+<script type="text/javascript">// <![CDATA[
+google_ad_client = "ca-pub-4906753266448300";
+/* 728x90, created 3/12/09 */
+google_ad_slot = "7045095412";
+google_ad_width = 728;
+google_ad_height = 90;
+// ]]></script>
+<script type="text/javascript" src="learning-linux-commands-awk_files/show_ads.html">// <![CDATA[
+
+// ]]></script>
+</center></div></div><div class="clearbreak"></div></div></div></div>
+							</div>
+						</div>
+									<div class="clearbreak"></div>
+				</div>	
+										
+				<div id="jsn-content" class="jsn-hasinnerright ">
+					<div id="jsn-content_inner">
+						<div id="jsn-maincontent">
+							<div id="jsn-centercol">
+								<div id="jsn-centercol_inner">
+																		
+<div id="system-message-container">
+<div id="system-message">
+</div>
+</div>
+																		<div id="jsn-mainbody-content" class="jsn-hasinnerright  jsn-hasmainbodybottom jsn-hasmainbody">
+										<div id="mainbody-content-inner1"><div id="mainbody-content-inner2"><div id="mainbody-content-inner3"><div id="mainbody-content-inner4">
+											<div id="mainbody-content-inner">
+																								<div id="jsn-mainbody">
+													<div class="item-page">
+	
+		<div class="page-header">
+		<h2>
+										Learning Linux Commands: awk					</h2>
+				</div>
+		<div class="jsn-article-toolbar">
+							<div class="clearfix"></div>
+	</div>
+		<div class="socialsharebuttonsbox" id="socialsharebuttonsbox" style="position:relative; top:-3px;"><div class="socialsharebuttonstitle" id="socialsharebuttonstitle" style="font-weight:bold; color:#999;">Share this post</div><a style="text-decoration:none" href="http://www.facebook.com/sharer.php?u=http://how-to.linuxcareer.com/learning-linux-commands-awk&amp;t=Learning%20Linux%20Commands%3A%20awk" target="blank"><img src="learning-linux-commands-awk_files/facebook_002.png" style="border:none; position:relative; top:-7px;" alt="FaceBook"></a>&nbsp;&nbsp;<a style="text-decoration:none" href="http://twitter.com/?status=Learning%20Linux%20Commands%3A%20awk%20http://how-to.linuxcareer.com/learning-linux-commands-awk" target="blank"><img src="learning-linux-commands-awk_files/twitter_002.png" style="border:none; position:relative; top:-7px;" alt="Twitter"></a>&nbsp;&nbsp;<div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: none repeat scroll 0% 0% transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 32px; height: 20px;"><iframe title="+1" data-gapiattached="true" allowtransparency="true" src="learning-linux-commands-awk_files/fastbutton.html" name="I0_1368250998745" id="I0_1368250998745" vspace="0" tabindex="0" style="position: static; top: 0px; width: 32px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" marginwidth="0" marginheight="0" hspace="0" frameborder="0" scrolling="no" width="100%"></iframe></div>
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script></div>
+							<div class="autotoc" style="float:right;"><script type="text/javascript">
+            // <![CDATA[
+            function toc_toggle_visible(ob)
+            {
+              var ul = ob.parentNode.parentNode.getElementsByTagName("ul")[0];
+              var d = ul.style.display == "none";
+              ul.style.display = d ? "" : "none";
+              ob.innerHTML = d ? "Hide"
+                               : "Show";
+              return false;
+            }
+            // ]]>
+            </script><span>Contents</span><span>[<a href="#" onclick="return toc_toggle_visible(this);">Hide</a>]</span><ul><li><ul><li><a href="http://how-to.linuxcareer.com/learning-linux-commands-awk#h1-introduction" class="toclink toclink-h1">1.&nbsp;Introduction</a></li><li><a href="http://how-to.linuxcareer.com/learning-linux-commands-awk#h2-what-is-it-that-awk-does" class="toclink toclink-h1">2.&nbsp;What is it that awk does?</a></li><li><a href="http://how-to.linuxcareer.com/learning-linux-commands-awk#h3-basic-concepts" class="toclink toclink-h1">3.&nbsp;Basic concepts</a></li><li><a href="http://how-to.linuxcareer.com/learning-linux-commands-awk#h4-examples" class="toclink toclink-h1">4.&nbsp;Examples</a></li><li><a href="http://how-to.linuxcareer.com/learning-linux-commands-awk#h5-conclusion" class="toclink toclink-h1">5.&nbsp;Conclusion</a></li></ul></li></ul></div>	<h1 id="h1-introduction">1.&nbsp;Introduction</h1>
+<p>In this case, the title might be a little misleading. And that is 
+because awk is more than a command, it's a programming language in its 
+own right. You can write awk scripts for complex operations or you can 
+use awk from the command line. The name stands for Aho, Weinberger and 
+Kernighan (yes, Brian Kernighan), the authors of the language, which was
+ started in 1977, hence it shares the same Unix spirit as the other 
+classic *nix utilities. If you're getting used to <a href="http://how-to.linuxcareer.com/c-development-on-linux-introduction" target="_blank">C programming</a>
+ or know it already, you will see some familiar concepts in awk, 
+especially since the 'k' in awk stands for the same person as the 'k' in
+ K&amp;R, the C programming bible. You will need some command-line 
+knowledge in Linux and possibly some scripting basics, but the last part
+ is optional, as we will try to offer something for everybody. Many 
+thanks to Arnold Robbins for all his work involved in awk.</p>
+<h1 id="h2-what-is-it-that-awk-does">2.&nbsp;What is it that awk does?</h1>
+<p>awk is a utility/language designed for data extraction. If the word 
+"extraction" rings a bell, it should because awk was one Larry Wall's 
+inspirations when he created Perl. awk is often used with <a href="http://how-to.linuxcareer.com/learning-linux-commands-sed" target="_blank">sed</a>
+ to perform useful and practical text manipulation chores, and it 
+depends on the task if you should use awk or Perl, but also on personal 
+preference. Just as sed, awk reads one line at a time, performs some 
+action depending on the condition you give it and outputs the result. 
+One of the most simple and popular uses of awk is selecting a column 
+from a text file or other command's output. One thing I used to do with 
+awk was, if I installed Debian on my second workstation, to get a list 
+of the installed software from my primary box then feed it to aptitude. 
+For that, I did something like that:</p>
+<pre>  $ dpkg -l | awk ' {print $2} ' &gt; installed</pre>
+ 
+<p>Most package managers today offer this facility, for example rpm's 
+-qa options, but the output is more than I want. I see that the second 
+column of dpkg -l 's output contains the name of the packages installed,
+ so this is why I used $2 with awk: to get me only the 2nd column.</p>
+<h1 id="h3-basic-concepts">3.&nbsp;Basic concepts</h1>
+<p>&nbsp;</p>
+<p>As you have noticed, the action to be performed by awk is enclosed in
+ braces, and the whole command is quoted. But the syntax is awk ' <em>condition</em> { <em>action</em>
+ }'. In our example, we had no condition, but if we wanted to, say, 
+check only for vim-related packages installed (yes, there is grep, but 
+this is an example, plus why use two utilities when you can only use 
+one?), we would have done this:</p>
+<pre style="width: 300px;"> $ dpkg -l | awk ' /'vim'/ {print $2} '</pre>
+<p>This command would print all packages installed that have "vim" in 
+their names. One thing that recommend awk is that it's fast. If you 
+replace "vim" with "lib", on my system that yields 1300 packages. There 
+will be situations where the data you'll have to work with will be much 
+bigger, and that's one part where awk shines. Anyway, let's start with 
+the examples, and we will explain some concepts as we go. But before 
+that, it would be good to know that there are several awk dialects and 
+implementations, and the examples presented here deal with GNU awk, as 
+an implementation and dialect. And because of various quoting issues, we
+ assume you're using <a href="http://linuxconfig.org/bash-scripting-tutorial" target="_blank" title="Bash scripting tutorial">bash</a>, ksh or sh, we don't support (t)csh.</p>
+<h1 id="h4-examples">4.&nbsp;Examples</h1>
+<table id="rounded-corner" border="0">
+<thead>
+<tr><th class="rounded-company" scope="col" colspan="2">Learning Linux awk command with examples</th></tr>
+</thead>
+<thead>
+<tr><th class="rounded-description" scope="col">Linux command syntax</th><th class="rounded-description" scope="col">Linux command description</th></tr>
+</thead>
+<tbody>
+<tr><th class="rounded-description" style="text-align: center;" scope="col" colspan="2">&nbsp;</th></tr>
+</tbody>
+<tbody>
+<tr>
+<td style="vertical-align: top;">
+<pre>awk ' {print $1,$3} '</pre>
+</td>
+<td style="vertical-align: top;">Print only columns one and three using stdin</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>awk ' {print $0} '<br>      </pre>
+</td>
+<td style="vertical-align: top;">Print all columns using stdin</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>awk ' /'pattern'/ {print $2} '</pre>
+</td>
+<td style="vertical-align: top;">Print only elements from column 2 that match pattern using stdin</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>awk -f script.awk inputfile</pre>
+</td>
+<td style="vertical-align: top;">Just like make or sed, awk uses -f to 
+get its' instructions from a file, useful when there is a lot to be done
+ and using the terminal would be impractical</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>awk ' program ' inputfile</pre>
+</td>
+<td style="vertical-align: top;">Execute program using data from inputfile</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>awk "BEGIN { print \"Hello, world!!\" }"</pre>
+</td>
+<td style="vertical-align: top;">Classic "Hello, world" in awk</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>awk '{ print }'</pre>
+</td>
+<td style="vertical-align: top;">Print what's entered on the command line until EOF (^D)</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>#! /bin/awk -f<br>BEGIN { print "Hello, world!" }</pre>
+</td>
+<td style="vertical-align: top;">awk script for the classic "Hello, world!" (make it executable with chmod and run it as-is)</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre># This is a program that prints \<br>"Hello, world!"<br># and exits</pre>
+</td>
+<td style="vertical-align: top;">Comments in awk scripts</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>awk -F "" 'program' files</pre>
+</td>
+<td style="vertical-align: top;">Define the FS (field separator) as null, as opposed to white space, the default</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>awk -F "regex" 'program' files</pre>
+</td>
+<td style="vertical-align: top;">FS can also be a regular expression</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>awk 'BEGIN { print "Here is a single \<br>quote &lt;'\''&gt;" }'</pre>
+</td>
+<td style="vertical-align: top;">Will print &lt;'&gt;. Here's why we prefer Bourne shells. :)</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>awk '{ if (length($0) &gt; max) max = \<br>length($0) }<br>END { print max }' inputfile</pre>
+</td>
+<td style="vertical-align: top;">Print the length of the longest line</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>awk 'length($0) &gt; 80' inputfile</pre>
+</td>
+<td style="vertical-align: top;">Print all lines longer than 80 characters</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>awk 'NF &gt; 0' data</pre>
+</td>
+<td style="vertical-align: top;">Print every line that has at least one field (NF stands for Number of Fields)</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>awk 'BEGIN { for (i = 1; i &lt;= 7; i++)<br>print int(101 * rand()) }'</pre>
+</td>
+<td style="vertical-align: top;">Print seven random numbers from 0 to 100</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>ls -l . | awk '{ x += $5 } ; END \<br>{ print "total bytes: " x }'<br>total bytes: 7449362<br><br></pre>
+</td>
+<td style="vertical-align: top;">Print the total number of bytes used by files in the current directory</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>ls -l . | awk '{ x += $5 } ; END \<br>{ print "total kilobytes: " (x + \<br>1023)/1024 }'<br>total kilobytes: 7275.85</pre>
+</td>
+<td style="vertical-align: top;">Print the total number of kilobytes used by files in the current directory</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>awk -F: '{ print $1 }' /etc/passwd | sort</pre>
+</td>
+<td style="vertical-align: top;">Print sorted list of login names</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>awk 'END { print NR }' inputfile</pre>
+</td>
+<td style="vertical-align: top;">Print number of lines in a file, as NR stands for Number of Rows</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>awk 'NR % 2 == 0' data</pre>
+</td>
+<td style="vertical-align: top;">Print the even-numbered lines in a file.<br> How would you print the odd-numbered lines?</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>ls -l | awk '$6 == "Nov" { sum += $5 }<br>END { print sum }'</pre>
+</td>
+<td style="vertical-align: top;">Prints the total number of bytes of files that were last modified in November</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>awk '$1  ̃/J/' inputfile<br><br></pre>
+</td>
+<td style="vertical-align: top;">Regular expression matching all entries in the first field that start with a capital j</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>awk '$1  ̃!/J/' inputfile</pre>
+</td>
+<td style="vertical-align: top;">Regular expression matching all entries in the first field that <span style="font-weight: bold;">don't</span> start with a capital j</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>awk 'BEGIN { print "He said \"hi!\" \<br>to her." }'</pre>
+</td>
+<td style="vertical-align: top;">Escaping double quotes in awk</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>echo aaaabcd | awk '{ sub(/a+/, \<br>"&lt;A&gt;"); print }'</pre>
+</td>
+<td style="vertical-align: top;">Prints "&lt;A&gt;bcd"</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>ls -lh | awk '{ owner = $3 ; $3 = $3 \<br>" 0wnz"; print $3 }' | uniq</pre>
+</td>
+<td style="vertical-align: top;">Attribution example; try it :)</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>awk '{ $2 = $2 - 10; print $0 }' inventory</pre>
+</td>
+<td style="vertical-align: top;">Modify inventory and print it, with the difference being that the value of the second field will be lessened by 10</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>awk '{ $6 = ($5 + $4 + $3 + $2); print \<br>$6' inventory</pre>
+</td>
+<td style="vertical-align: top;">Even though field six doesn't exist in inventory, you can create it and assign values to it, then display it</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>echo a b c d | awk '{ OFS = ":"; $2 = ""<br>&gt; print $0; print NF }'<br><br></pre>
+</td>
+<td style="vertical-align: top;">OFS is the Output Field Separator and 
+the command will output "a::c:d" and "4" because although field two is 
+nullified, it still exists so it gets counted</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>echo a b c d | awk ’{ OFS = ":"; \<br>$2 = ""; $6 = "new"<br>&gt; print $0; print NF }’<br><br></pre>
+</td>
+<td style="vertical-align: top;">Another example of field creation; as 
+you can see, the field between $4 (existing) and $6 (to be created) gets
+ created as well (as $5 with an empty value), so the output will be 
+"a::c:d::new" "6"</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>echo a b c d e f | awk ’\<br>{ print "NF =", NF;<br>&gt; NF = 3; print $0 }’<br><br></pre>
+</td>
+<td style="vertical-align: top;">Throwing away three fields (last ones) by changing the number of fields</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>FS=[ ]</pre>
+</td>
+<td style="vertical-align: top;">This is a regular expression setting the field separator to space and nothing else (non-greedy pattern matching)</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>echo ' a b c d ' |  awk 'BEGIN { FS = \<br>"[ \t\n]+" }<br>&gt; { print $2 }'<br><br><br></pre>
+</td>
+<td style="vertical-align: top;">This will print only "a"</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>awk -n '/RE/{p;q;}' file.txt</pre>
+</td>
+<td style="vertical-align: top;">Print only the first match of RE (regular expression)</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>awk -F\\\\ ’...’ inputfiles ...</pre>
+</td>
+<td style="vertical-align: top;">Sets FS to \\</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>BEGIN { RS = "" ; FS = "\n" }<br>{<br>print "Name is:", $1<br>print "Address is:", $2<br>print "City and State are:", $3<br>print ""<br>}</pre>
+</td>
+<td style="vertical-align: top;">If we have a record like<br> "John Doe<br> 1234 Unknown Ave.<br> Doeville, MA", this script sets the field separator to <br> newline so it can easily operate on rows</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>awk ’BEGIN { OFS = ";"; ORS = "\n\n" }<br>&gt; { print $1, $2 }’ inputfile</pre>
+</td>
+<td style="vertical-align: top;">With a two-field file, the records will be printed like this:<br> "field1:field2<br> <br> field3;field4<br> <br> ...;..."<br> Because ORS, the Output Record Separator, is set to two newlines and OFS is ";"</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>awk ’BEGIN {<br>&gt; OFMT = "%.0f" # print numbers as \<br>integers (rounds)<br>&gt; print 17.23, 17.54 }’<br><br></pre>
+</td>
+<td style="vertical-align: top;">This will print 17 and 18, because the Output ForMaT is set to round floating point values to the closest integer value</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>awk ’BEGIN {<br>&gt; msg = "Dont Panic!"<br>&gt; printf "%s\n", msg<br>&gt;} '</pre>
+</td>
+<td style="vertical-align: top;">You can use printf mainly how you use it in C</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>awk ’{ printf "%-10s %s\n", $1, \<br>$2 }’ inputfile</pre>
+</td>
+<td style="vertical-align: top;">Prints the first field as a 10-character string, left-justified, and $2 normally, next to it</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>awk ’BEGIN { print "Name  Number"<br>             print "----  ------" }<br>     { printf "%-10s %s\n", $1, \<br>$2 }’ inputfile</pre>
+</td>
+<td style="vertical-align: top;">Making things prettier</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>awk ’{ print $2 &gt; "phone-list" }' \<br>inputfile</pre>
+</td>
+<td style="vertical-align: top;">Simple data extraction example, where the second field is written to a file named "phone-list"</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>awk ’{ print $1 &gt; "names.unsorted"<br>       command = "sort -r &gt; names.sorted"<br>       print $1 | command }’ inputfile</pre>
+</td>
+<td style="vertical-align: top;">Write the names contained in $1 to a 
+file, then sort and output the result to another file (you can also 
+append with &gt;&gt;, like you would in a shell)</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>awk ’BEGIN { printf "%d, %d, %d\n", 011, 11, \<br>0x11 }’</pre>
+</td>
+<td style="vertical-align: top;">Will print 9, 11, 17</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>if (/foo/ || /bar/)<br>   print "Found!"</pre>
+</td>
+<td style="vertical-align: top;">Simple search for foo <span style="font-style: italic;">or</span> bar</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>awk ’{ sum = $2 + $3 + $4 ; avg = sum / 3<br>&gt; print $1, avg }’ grades</pre>
+</td>
+<td style="vertical-align: top;">
+<p>Simple arithmetic operations (most operators resemble C a lot)</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>awk '{ print "The square root of", \<br>$1, "is", sqrt($1) }'<br>2<br>The square root of 2 is 1.41421<br>7<br>The square root of 7 is 2.64575</pre>
+</td>
+<td style="vertical-align: top;">
+<p>Simple, extensible calculator</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>awk ’$1 == "start", $1 == "stop"’ inputfile</pre>
+</td>
+<td style="vertical-align: top;">
+<p>Prints every record between start and stop</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>awk ’
+&gt; BEGIN { print "Analysis of \"foo\"" }
+&gt; /foo/ { ++n }
+&gt; END { print "\"foo\" appears", n,\
+ "times." }’ inputfile
+</pre>
+</td>
+<td style="vertical-align: top;">
+<p>BEGIN and END rules are executed exactly once, before and after any record processing</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>echo -n "Enter search pattern: "<br>read pattern<br>awk "/$pattern/ "’{ nmatches++ }<br>END { print nmatches, "found" }’ inputfile</pre>
+</td>
+<td style="vertical-align: top;">
+<p>Search using shell</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>if (x % 2 == 0)<br>print "x is even"<br>else<br>print "x is odd"</pre>
+</td>
+<td style="vertical-align: top;">
+<p>Simple conditional. awk, like C, also supports the ?: operators</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>awk ’{ i = 1<br>  while (i &lt;= 3) {<br>    print $i<br>    i++<br>  }<br>}’ inputfile</pre>
+</td>
+<td style="vertical-align: top;">
+<p>Prints the first three fields of each record, one per line.</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>awk ’{ for (i = 1; i &lt;= 3; i++)<br>  print $i<br>}’</pre>
+</td>
+<td style="vertical-align: top;">Prints the first three fields of each record, one per line.</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>BEGIN {<br>if (("date" | getline date_now) &lt;= 0) {<br>  print "Can’t get system date" &gt; \<br>"/dev/stderr"<br>  exit 1<br>}<br>print "current date is", date_now<br>close("date")<br>}</pre>
+</td>
+<td style="vertical-align: top;">Exiting with an error code different from 0 means something's not quite right. Here's and example</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>awk ’BEGIN {<br>&gt; for (i = 0; i &lt; ARGC; i++)<br>&gt; print ARGV[i]<br>&gt; }’ file1 file2</pre>
+</td>
+<td style="vertical-align: top;">Prints awk file1 file2</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>for (i in frequencies)<br>delete frequencies[i]</pre>
+</td>
+<td style="vertical-align: top;">Delete elements in an array</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>foo[4] = ""<br>if (4 in foo)<br>print "This is printed, even though foo[4] \<br>is empty"</pre>
+</td>
+<td style="vertical-align: top;">Check for array elements</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>function ctime(ts, format)<br>{<br>  format = "%a %b %d %H:%M:%S %Z %Y"<br>  if (ts == 0)<br>  ts = systime()<br>  # use current time as default<br>  return strftime(format, ts)<br>}</pre>
+</td>
+<td style="vertical-align: top;">An awk variant of ctime() in C. This is how you define your own functions in awk</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>BEGIN { _cliff_seed = 0.1 }<br>function cliff_rand()<br>{<br>  _cliff_seed = (100 * log(_cliff_seed)) % 1<br>  if (_cliff_seed &lt; 0)<br>    _cliff_seed = - _cliff_seed<br>  return _cliff_seed<br>}</pre>
+</td>
+<td style="vertical-align: top;">A Cliff random number generator</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<pre>cat apache-anon-noadmin.log | \<br>awk 'function ri(n) \<br>{  return int(n*rand()); }  \<br>BEGIN { srand(); }  { if (! \<br>($1 in randip)) {  \<br>randip[$1] = sprintf("%d.%d.%d.%d", \<br>ri(255), ri(255)\<br>, ri(255), ri(255)); } \<br>$1 = randip[$1]; print $0  }'</pre>
+</td>
+<td style="vertical-align: top;">Anonymize an Apache log (IPs are randomized)</td>
+</tr>
+</tbody>
+</table>
+<h1 id="h5-conclusion">5.&nbsp;Conclusion</h1>
+<p>As you can see, with awk you can do lots of text processing and other
+ nifty stuff. We didn't get into more advanced topics, like awk's 
+predefined functions, but we showed you enough (we hope) to start 
+remembering it as a powerful tool.</p>
+	
+						 </div>
+
+												</div>
+																								<div id="jsn-pos-mainbody-bottom" class="jsn-modulescontainer jsn-horizontallayout jsn-modulescontainer2">
+													<div class="lightbox-2 jsn-icon-info jsn-modulecontainer"><div class="jsn-modulecontainer_inner"><h3 class="jsn-moduletitle"><span class="jsn-moduleicon">Author: Rares Aioanei</span></h3><div class="jsn-modulecontent">
+<div>
+	<p>I'm using Linux/BSD since about 2003, passionate about everything 
+that involves Linux/BSD and Free Software. Contributor to various FOSS 
+projects and your average system administrator in everyday life.</p>
+<p style="text-align: right;"><a class="link-button button-orange" href="http://how-to.linuxcareer.com/rares-aioanei" target="_blank"><span class="link-icon jsn-icon-user">View Profile</span></a></p></div><div class="clearbreak"></div></div></div></div><div class="lightbox-2 jsn-icon-connect jsn-modulecontainer"><div class="jsn-modulecontainer_inner"><h3 class="jsn-moduletitle"><span class="jsn-moduleicon">Stay Tuned</span></h3><div class="jsn-modulecontent">
+<div>
+	<p>Make sure you tune in to our <a href="http://feeds.feedburner.com/Linuxcareercom-ItCareerResources" target="_blank">RSS</a> and <a href="http://www.linuxcareer.com/linux-jobs-search" target="_blank">Linux IT jobs</a>
+ portal to stay informed about the latest opportunities in the field. To
+ help you to keep you skills sharp we also offer various <a href="https://linuxacademy.com/" target="_blank" title="Linux onlie training courses">Linux Training courses</a>.&nbsp; Lastly, visit our <a href="http://forum.linuxcareer.com/" title="Linux Forum">Linux Forum</a> if you want to share your Linux experiences with us or require additional help.</p></div><div class="clearbreak"></div></div></div></div>
+													<div class="clearbreak"></div>
+												</div>
+																							</div>
+																										<div id="jsn-pos-innerright">
+																<div id="jsn-pos-innerright_inner">
+																	<div class="lightbox-2 jsn-icon-info jsn-modulecontainer"><div class="jsn-modulecontainer_inner"><h3 class="jsn-moduletitle"><span class="jsn-moduleicon">Free Linux eBooks</span></h3><div class="jsn-modulecontent"><!-- JSN IMAGESHOW PRO UNLIMITED 4.5.5 - Theme Slider 1.1.2 --><div class="jsn-container"><div class="jsn-gallery"><div style="width: 200px; height: 259px;" class="box_skitter jsn-themeslider-gallery jsn-themeslider-skitter-jq0QO">
+<ul style="display: none;"><li>
+			   			<a href="http://linuxcareer.tradepub.com/free/w_infk04/?p=w_infk04">
+			   				<img src="learning-linux-commands-awk_files/w_infk04c4.gif" alt="Java™ Application Development on Linux">
+			   			</a>
+			   			<div class="label_text"><p class="jsn-themeslider-caption-title">Java™ Application Development on Linux</p></div>
+					 </li><li>
+			   			<a href="http://linuxcareer.tradepub.com/free/w_infk10/?p=w_infk10">
+			   				<img src="learning-linux-commands-awk_files/w_infk10c4.gif" alt="Understanding the Linux® Virtual Memory Manager">
+			   			</a>
+			   			<div class="label_text"><p class="jsn-themeslider-caption-title">Understanding the Linux® Virtual Memory Manager</p></div>
+					 </li><li>
+			   			<a href="http://linuxcareer.tradepub.com/free/w_infk05/?p=w_infk05">
+			   				<img src="learning-linux-commands-awk_files/w_infk05c4.gif" alt="Managing Linux® Systems with Webmin™">
+			   			</a>
+			   			<div class="label_text"><p class="jsn-themeslider-caption-title">Managing Linux® Systems with Webmin™</p></div>
+					 </li><li>
+			   			<a href="http://linuxcareer.tradepub.com/free/w_sym125/?p=w_sym125">
+			   				<img src="learning-linux-commands-awk_files/w_sym125c4.gif" alt="">
+			   			</a>
+			   			<div class="label_text"></div>
+					 </li><li>
+			   			<a href="http://linuxcareer.tradepub.com/free/w_infk03/?p=w_infk03">
+			   				<img src="learning-linux-commands-awk_files/w_infk03c4.gif" alt="Self-Service Linux®: Mastering the Art of Problem Determination">
+			   			</a>
+			   			<div class="label_text"><p class="jsn-themeslider-caption-title">Self-Service Linux®: Mastering the Art of Problem Determination</p></div>
+					 </li><li>
+			   			<a href="http://linuxcareer.tradepub.com/free/w_infk14/?p=w_infk14">
+			   				<img src="learning-linux-commands-awk_files/w_infk14c4.gif" alt="The Official Samba-3 HOWTO and Reference Guide">
+			   			</a>
+			   			<div class="label_text"><p class="jsn-themeslider-caption-title">The Official Samba-3 HOWTO and Reference Guide</p></div>
+					 </li><li>
+			   			<a href="http://linuxcareer.tradepub.com/free/w_infk09/?p=w_infk09">
+			   				<img src="learning-linux-commands-awk_files/w_infk09c4.gif" alt="User Mode Linux">
+			   			</a>
+			   			<div class="label_text"><p class="jsn-themeslider-caption-title">User Mode Linux</p></div>
+					 </li><li>
+			   			<a href="http://linuxcareer.tradepub.com/free/w_infk02/?p=w_infk02">
+			   				<img src="learning-linux-commands-awk_files/w_infk02c4.gif" alt="Linux® Quick Fix Notebook">
+			   			</a>
+			   			<div class="label_text"><p class="jsn-themeslider-caption-title">Linux® Quick Fix Notebook</p></div>
+					 </li><li>
+			   			<a href="http://linuxcareer.tradepub.com/free/w_infk01/?p=w_infk01">
+			   				<img src="learning-linux-commands-awk_files/w_infk01c4.gif" alt="Open Source Security Tools">
+			   			</a>
+			   			<div class="label_text"><p class="jsn-themeslider-caption-title">Open Source Security Tools</p></div>
+					 </li><li>
+			   			<a href="http://linuxcareer.tradepub.com/free/w_infk07/?p=w_infk07">
+			   				<img src="learning-linux-commands-awk_files/w_infk07c4.gif" alt="An Introduction to Design Patterns in C++ with Qt 4">
+			   			</a>
+			   			<div class="label_text"><p class="jsn-themeslider-caption-title">An Introduction to Design Patterns in C++ with Qt 4</p></div>
+					 </li><li>
+			   			<a href="http://linuxcareer.tradepub.com/free/w_infk12/?p=w_infk12">
+			   				<img src="learning-linux-commands-awk_files/w_infk12c4.gif" alt="Linux® Patch Management">
+			   			</a>
+			   			<div class="label_text"><p class="jsn-themeslider-caption-title">Linux® Patch Management</p></div>
+					 </li></ul><span style="display: none;" class="prev_button">prev</span><span style="display: none;" class="next_button">next</span><span style="display: none; left: 15px;" class="info_slide"><span style="background-color: rgb(52, 51, 51); color: rgb(255, 255, 255);" class="image_number" rel="0" id="image_n_1_0">1</span> <span style="background-color: rgb(52, 51, 51); color: rgb(255, 255, 255);" class="image_number" rel="1" id="image_n_2_0">2</span> <span style="background-color: rgb(56, 51, 51); color: rgb(255, 255, 255);" class="image_number" rel="2" id="image_n_3_0">3</span> <span style="background-color: rgb(94, 51, 51); color: rgb(255, 255, 255);" class="image_number" rel="3" id="image_n_4_0">4</span> <span style="background-color: rgb(52, 51, 51); color: rgb(255, 255, 255);" class="image_number" rel="4" id="image_n_5_0">5</span> <span style="background-color: rgb(76, 51, 51); color: rgb(255, 255, 255);" class="image_number" rel="5" id="image_n_6_0">6</span> <span style="background-color: rgb(102, 51, 51); color: rgb(255, 255, 255);" class="image_number" rel="6" id="image_n_7_0">7</span> <span style="background-color: rgb(66, 51, 51); color: rgb(255, 255, 255);" class="image_number" rel="7" id="image_n_8_0">8</span> <span style="background-color: rgb(190, 51, 51); color: rgb(255, 255, 255);" class="image_number image_number_select" rel="8" id="image_n_9_0">9</span> <span style="background-color: rgb(52, 51, 51); color: rgb(255, 255, 255);" class="image_number" rel="9" id="image_n_10_0">10</span> <span style="background-color: rgb(52, 51, 51); color: rgb(255, 255, 255);" class="image_number" rel="10" id="image_n_11_0">11</span> </span><div style="width: 200px; height: 259px;" class="container_skitter"><div class="image"><a target="_self" href="http://linuxcareer.tradepub.com/free/w_infk01/?p=w_infk01"><img style="display: inline;" src="learning-linux-commands-awk_files/w_infk01c4.gif" class="image_main"></a><div style="display: none; width: 200px;" class="label_skitter"><p class="jsn-themeslider-caption-title">Open Source Security Tools</p></div></div><div style="top: 0px; left: 200px; width: 200px; height: 52px; display: block;" class="box_clone"><a href="http://linuxcareer.tradepub.com/free/w_infk01/?p=w_infk01"><img style="left: 0px; top: 0px;" src="learning-linux-commands-awk_files/w_infk02c4.gif"></a></div><div style="top: 0px; left: 0px; width: 200px; height: 52px; display: block;" class="box_clone"><a href="http://linuxcareer.tradepub.com/free/w_infk01/?p=w_infk01"><img style="left: 0px; top: 0px;" src="learning-linux-commands-awk_files/w_infk01c4.gif"></a></div><div style="top: 52px; left: 200px; width: 200px; height: 52px; display: block;" class="box_clone"><a href="http://linuxcareer.tradepub.com/free/w_infk01/?p=w_infk01"><img style="left: 0px; top: -52px;" src="learning-linux-commands-awk_files/w_infk02c4.gif"></a></div><div style="top: 52px; left: 0px; width: 200px; height: 52px; display: block;" class="box_clone"><a href="http://linuxcareer.tradepub.com/free/w_infk01/?p=w_infk01"><img style="left: 0px; top: -52px;" src="learning-linux-commands-awk_files/w_infk01c4.gif"></a></div><div style="top: 104px; left: 200px; width: 200px; height: 52px; display: block;" class="box_clone"><a href="http://linuxcareer.tradepub.com/free/w_infk01/?p=w_infk01"><img style="left: 0px; top: -104px;" src="learning-linux-commands-awk_files/w_infk02c4.gif"></a></div><div style="top: 104px; left: 0px; width: 200px; height: 52px; display: block;" class="box_clone"><a href="http://linuxcareer.tradepub.com/free/w_infk01/?p=w_infk01"><img style="left: 0px; top: -104px;" src="learning-linux-commands-awk_files/w_infk01c4.gif"></a></div><div style="top: 156px; left: 200px; width: 200px; height: 52px; display: block;" class="box_clone"><a href="http://linuxcareer.tradepub.com/free/w_infk01/?p=w_infk01"><img style="left: 0px; top: -156px;" src="learning-linux-commands-awk_files/w_infk02c4.gif"></a></div><div style="top: 156px; left: 0px; width: 200px; height: 52px; display: block;" class="box_clone"><a href="http://linuxcareer.tradepub.com/free/w_infk01/?p=w_infk01"><img style="left: 0px; top: -156px;" src="learning-linux-commands-awk_files/w_infk01c4.gif"></a></div><div style="top: 208px; left: 200px; width: 200px; height: 52px; display: block;" class="box_clone"><a href="http://linuxcareer.tradepub.com/free/w_infk01/?p=w_infk01"><img style="left: 0px; top: -208px;" src="learning-linux-commands-awk_files/w_infk02c4.gif"></a></div><div style="top: 208px; left: 0px; width: 200px; height: 52px; display: block;" class="box_clone"><a href="http://linuxcareer.tradepub.com/free/w_infk01/?p=w_infk01"><img style="left: 0px; top: -208px;" src="learning-linux-commands-awk_files/w_infk01c4.gif"></a></div></div><span style="left: 79px; opacity: 0.3; display: none;" class="play_pause_button">pause</span></div>
+<script type="text/javascript">
+						jsnThemeSliderjQuery(function() {
+						jsnThemeSliderjQuery(document).ready(function(){
+							jsnThemeSliderjQuery('.jsn-themeslider-skitter-jq0QO').skitter({"animation":"directionRight","navigation":true,"navShowOnMouseOver":true,"dots":false,"numbers":false,"caption_title_css":"font-family: Verdana;\r\nfont-size: 12px;\r\nfont-weight: bold;\r\ntext-align: left;\r\ncolor: #E9E9E9;","caption_description_css":"font-family: Arial;\r\nfont-size: 11px;\r\nfont-weight: normal;\r\ntext-align: left;\r\ncolor: #AFAFAF;","caption_link_css":"font-family: Verdana;\r\nfont-size: 11px;\r\nfont-weight: bold;\r\ntext-align: right;\r\ncolor: #E06614;","caption_position":"bottom","caption_caption_opacity":"filter:alpha(opacity=75);opacity: 0.75;","interval":6000,"controls":true,"controlShowOnMouseOver":true,"stop_over":true,"auto_play":true,"caption_title_show":true,"caption_description_show":false,"caption_link_show":false,"label":false,"animateNumberActive":{"backgroundColor":"#CC3333","color":"#fff"}});
+						})});
+				</script><div class="jsn-themeslider-seocontent">
+<div><p>Tradepub Ebooks</p><p></p><ul><li><p><a href="http://linuxcareer.tradepub.com/free/w_sym125/?p=w_sym125">http://linuxcareer.tradepub.com/free/w_sym125/?p=w_sym125</a></p></li><li><p>Open Source Security Tools</p><p><a href="http://linuxcareer.tradepub.com/free/w_infk01/?p=w_infk01">http://linuxcareer.tradepub.com/free/w_infk01/?p=w_infk01</a></p></li><li><p>Self-Service Linux®: Mastering the Art of Problem Determination</p><p><a href="http://linuxcareer.tradepub.com/free/w_infk03/?p=w_infk03">http://linuxcareer.tradepub.com/free/w_infk03/?p=w_infk03</a></p></li><li><p>Java™ Application Development on Linux</p><p><a href="http://linuxcareer.tradepub.com/free/w_infk04/?p=w_infk04">http://linuxcareer.tradepub.com/free/w_infk04/?p=w_infk04</a></p></li><li><p>Managing Linux® Systems with Webmin™</p><p><a href="http://linuxcareer.tradepub.com/free/w_infk05/?p=w_infk05">http://linuxcareer.tradepub.com/free/w_infk05/?p=w_infk05</a></p></li><li><p>An Introduction to Design Patterns in C++ with Qt 4</p><p><a href="http://linuxcareer.tradepub.com/free/w_infk07/?p=w_infk07">http://linuxcareer.tradepub.com/free/w_infk07/?p=w_infk07</a></p></li><li><p>User Mode Linux</p><p><a href="http://linuxcareer.tradepub.com/free/w_infk09/?p=w_infk09">http://linuxcareer.tradepub.com/free/w_infk09/?p=w_infk09</a></p></li><li><p>Understanding the Linux® Virtual Memory Manager</p><p><a href="http://linuxcareer.tradepub.com/free/w_infk10/?p=w_infk10">http://linuxcareer.tradepub.com/free/w_infk10/?p=w_infk10</a></p></li><li><p>Linux® Patch Management</p><p><a href="http://linuxcareer.tradepub.com/free/w_infk12/?p=w_infk12">http://linuxcareer.tradepub.com/free/w_infk12/?p=w_infk12</a></p></li><li><p>The Official Samba-3 HOWTO and Reference Guide</p><p><a href="http://linuxcareer.tradepub.com/free/w_infk14/?p=w_infk14">http://linuxcareer.tradepub.com/free/w_infk14/?p=w_infk14</a></p></li><li><p>Linux® Quick Fix Notebook</p><p><a href="http://linuxcareer.tradepub.com/free/w_infk02/?p=w_infk02">http://linuxcareer.tradepub.com/free/w_infk02/?p=w_infk02</a></p></li></ul></div></div>
+</div></div><div class="clearbreak"></div></div></div></div><div class="richbox-2 jsn-icon-statistics jsn-modulecontainer"><div class="jsn-modulecontainer_inner"><h3 class="jsn-moduletitle"><span class="jsn-moduleicon">Partners</span></h3><div class="jsn-modulecontent">
+<div>
+	<p><a href="https://linuxacademy.com/" target="_blank" title="Linux Academy online training">  <img src="learning-linux-commands-awk_files/send-banner.png" title="Killed-http://www.linuxcareer.com/images/01_300x250_02.jpg-by-size" height="250" border="0" width="300"></a></p>
+<hr>
+<p><a href="http://linuxconfig.org/"><img src="learning-linux-commands-awk_files/linuxconfig_logo.png" alt="" style="display: block; margin-left: auto; margin-right: auto;"></a></p></div><div class="clearbreak"></div></div></div></div><div class="lightbox-2 jsn-icon-info jsn-modulecontainer"><div class="jsn-modulecontainer_inner"><h3 class="jsn-moduletitle"><span class="jsn-moduleicon">LinuxCareer Featured Jobs</span></h3><div class="jsn-modulecontent">
+			<div style="direction: ltr; text-align: left ! important" class="feedlightbox-2 jsn-icon-info">
+		
+	<ul class="newsfeedlightbox-2 jsn-icon-info">
+	<!-- Show items -->
+		<ul>
+									<li>
+											<h5 class="feed-link">
+						<a href="http://www.linuxcareer.com/linuxcareer-featured-jobs/130-linux-system-admin-advisor" target="_blank">
+						Linux System Admin Advisor</a></h5>
+					
+											<div class="feed-item-description">
+						<div class="feed-description"><p><strong>8 May 2013, Dell, Full Time, Plano, TX or Lexington, VA, USA</strong></p>
+<p><span><span>This position requires 8-10 years of IT experience or equivalent combination of education and experience.<br><br>As
+ part of a global UNIX/Linux administration team provide support for a 
+mixed environment customer. Primary focus will be the support of a RHEL 
+Linux environment running on a mix of VMWare virtual machines and Dell 
+based physical servers. The</span></span></p></div>...
+						</div>
+										</li>
+										<li>
+											<h5 class="feed-link">
+						<a href="http://www.linuxcareer.com/linuxcareer-featured-jobs/129-linux-adminstrator" target="_blank">
+						Linux Adminstrator</a></h5>
+					
+											<div class="feed-item-description">
+						<div class="feed-description"><p><strong>7 May 2013, <span class="state-message">TRA Globa, </span>Contract/Temp, Sydney, Australia</strong></p>
+<p><strong>Job Summary:</strong></p>
+<ul>
+<li>Short Term Contract</li>
+<li>Immediate Start</li>
+<li>$$$$$$</li>
+</ul>
+<p>I am looking for a Linux Adminstrator with AFP clearance to join a 
+large financial institution in Sydney on a short term contract basis. 
+The successfull applcant must have AFP clearance and have experience 
+working in a PCI</p></div>...
+						</div>
+										</li>
+										<li>
+											<h5 class="feed-link">
+						<a href="http://www.linuxcareer.com/linuxcareer-featured-jobs/131-linux-systems-engineer" target="_blank">
+						Linux Systems Engineer</a></h5>
+					
+											<div class="feed-item-description">
+						<div class="feed-description"><p><strong>2 May 2013, CWIE Holding Company, Inc., Full Time, Phoenix Metro Region, Arizona, USA</strong></p>
+<div class="bld_txt" style="padding-bottom: 5px;">As a Linux Systems 
+Engineer you will be developing, supporting, and improving our 
+customer’s infrastructures ranging from single server solutions to large
+ scale redundant virtualized clusters. Our Engineers work within our 
+team to design and implement highly available redundant systems to run 
+our</div></div>...
+						</div>
+										</li>
+						</ul>
+	<div class="clearbreak"></div></ul></div></div></div>
+																</div>
+															</div>
+																						<div class="clearbreak"></div>
+										</div></div></div></div>
+									</div>
+											</div>
+							</div>
+							<div class="clearbreak"></div>
+							</div>
+						</div>
+								<div class="clearbreak"></div></div>
+				</div>
+			</div>
+			
+							<div id="jsn-content-bottom" class="clearafter">
+					<div id="jsn-content-bottom-inner">
+											<div id="jsn-pos-content-bottom" class="jsn-modulescontainer jsn-horizontallayout jsn-modulescontainer3 clearafter">
+							<div class=" jsn-modulecontainer"><div class="jsn-modulecontainer_inner"><h3 class="jsn-moduletitle"><span class="jsn-moduleicon">Who are we?</span></h3><div class="jsn-modulecontent">
+<div>
+	<p><strong>LinuxCareer.com</strong> is not affiliated with any local or
+ international company, nor is it a recruitment or employment agency. We
+ specialise in Linux based careers and closely related Information 
+Technology fields by providing careers advice and Linux job search.</p></div><div class="clearbreak"></div></div></div></div><div class=" jsn-modulecontainer"><div class="jsn-modulecontainer_inner"><h3 class="jsn-moduletitle"><span class="jsn-moduleicon">JOIN LINUXCAREER</span></h3><div class="jsn-modulecontent">
+<div>
+	<p>You can also get involved in the LinuxCareer project by participating on our <a href="http://forum.linuxcareer.com/forum.php">FORUM</a> or becoming a <a href="http://www.linuxcareer.com/how-to-participate" title="JOin Linux Career">VOLUNTEER TECHNICAL WRITER</a>. We offer a range of privileges and good company.</p></div><div class="clearbreak"></div></div></div></div><div class=" jsn-modulecontainer"><div class="jsn-modulecontainer_inner"><h3 class="jsn-moduletitle"><span class="jsn-moduleicon">Stay Connected</span></h3><div class="jsn-modulecontent">
+<div>
+	<div class="grid-layout grid-layout2 clearafter">
+<div class="grid-col"><div class="grid-col_inner">
+<div class="clearafter" style="margin-bottom: 15px; line-height: 25px;"><a href="http://www.facebook.com/LINUXCAREER" target="_blank"><img src="learning-linux-commands-awk_files/facebook.png" style="border: 0px; float: left;"></a> <a href="http://www.facebook.com/LINUXCAREER" target="_blank"><span style="text-transform: uppercase; margin-left: 10px;"><strong>FaceBook</strong></span></a></div>
+</div></div>
+<div class="grid-col grid-lastcol"><div class="grid-col_inner">
+<div class="clearafter" style="margin-bottom: 15px; line-height: 25px;"><a href="http://www.twitter.com/LINUXCAREER" target="_blank"><img src="learning-linux-commands-awk_files/twitter.png" style="border: 0px; float: left;"></a> <a href="http://www.twitter.com/LINUXCAREER" target="_blank"><span style="text-transform: uppercase; margin-left: 10px;"><strong>Twitter</strong></span></a></div>
+</div></div>
+</div>
+<div class="grid-layout grid-layout2 clearafter">
+<div class="grid-col"><div class="grid-col_inner">
+<div class="clearafter" style="margin-bottom: 15px; line-height: 25px;"><a href="mailto:admin%20AT%20linuxcareer%20DOT%20com"><img src="learning-linux-commands-awk_files/email.png" style="border: 0px; float: left;"></a> <a href="mailto:admin%20AT%20linuxcareer%20DOT%20com"><span style="text-transform: uppercase; margin-left: 10px;"><strong>Email</strong></span></a></div>
+</div></div>
+<div class="grid-col grid-lastcol"><div class="grid-col_inner">
+<div class="clearafter" style="margin-bottom: 15px; line-height: 25px;"><a href="http://feeds.feedburner.com/Linuxcareercom-ItCareerResources" target="_blank"><img src="learning-linux-commands-awk_files/rss.png" style="border: 0px; float: left;"></a> <a href="http://feeds.feedburner.com/Linuxcareercom-ItCareerResources" target="_blank"><span style="text-transform: uppercase; margin-left: 10px;"><strong>DOCS RSS</strong></span></a></div>
+</div></div>
+</div></div><div class="clearbreak"></div></div></div></div>
+						</div>
+										</div>
+				</div>
+										<div id="jsn-footer">
+					<div id="jsn-footer-inner">
+						<div id="jsn-footermodules" class="jsn-modulescontainer jsn-modulescontainer2">
+															<div id="jsn-pos-footer">
+									<div class=" jsn-modulecontainer"><div class="jsn-modulecontainer_inner"><div class="jsn-modulecontent"><span class="jsn-menu-toggle">Menu</span>
+<ul class="menu-divmenu">
+<li class="first">	<a href="http://www.linuxcareer.com/linux-jobs-search">
+		<span>
+		Linux Jobs Search		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/post-a-job-ad">
+		<span>
+		Post a Job Ad		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/suggest-news">
+		<span>
+		Suggest News		</span>
+	</a>
+	</li><li>	<a href="http://www.linuxcareer.com/how-to-participate">
+		<span>
+		How to Participate		</span>
+	</a>
+	</li><li class="jsn-icon-contact">	<a href="http://www.linuxcareer.com/contact">
+		<span>
+		Contact us		</span>
+	</a>
+	</li><li class="last"><a href="http://how-to.linuxcareer.com/authors">
+	<span>
+		Our Authors	</span>
+</a></li></ul><div class="clearbreak"></div></div></div></div>
+								</div>
+															<div id="jsn-pos-bottom">
+									<div class=" jsn-modulecontainer"><div class="jsn-modulecontainer_inner"><div class="jsn-modulecontent">
+<div>
+	<p style="text-align: right;">Copyright 2010 - 2013 LinuxCareer.com. All rights reserved.<br> <span style="font-size: x-small;">Use of this Web site constitutes acceptance of the LinuxCareer.com <a href="http://www.linuxcareer.com/121-term-conditions.html" title="Linux Career's terms and conditions">Terms of Use</a> and <a href="http://www.linuxcareer.com/122-privacy-policy.html" title="Privacy and Policy">Privacy Policy</a>. </span></p></div><div class="clearbreak"></div></div></div></div>
+								</div>
+														<div class="clearbreak"></div>
+						</div>
+					</div>
+				</div>
+					</div>
+	
+	
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40602308-2', 'linuxcareer.com');
+  ga('send', 'pageview');
+
+</script>
+
+</div><div tabindex="-1" style="z-index: 65555; opacity: 0;" aria-hidden="true" id="sbox-overlay"></div><div class="shadow" style="z-index: 65557;" aria-hidden="true" role="dialog" id="sbox-window"><div style="opacity: 0;" id="sbox-content"></div><a aria-controls="sbox-window" role="button" href="#" id="sbox-btn-close"></a></div></body></html>
